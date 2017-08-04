@@ -1,0 +1,6 @@
+[user]
+	name = furuhama
+	email = furuhama.yusuke@moneyforward.co.jp
+[core]
+	excludesfile = /Users/furuhama.yusuke/.gitignore_global
+	editor = vim -c \"set fenc=utf-8\"
