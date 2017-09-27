@@ -87,8 +87,6 @@ set smartcase
 set hlsearch
 " 構文毎に文字色を変化させる
 syntax on
-" molokai を入れる
-colorscheme molokai
 set t_Co=256
 " タブ入力を複数の空白入力に置き換える
 set expandtab
