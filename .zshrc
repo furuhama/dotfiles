@@ -11,7 +11,7 @@ eval "$(direnv hook zsh)"
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-export PATH=$PATH:/Users/furuhama.yusuke/.nodebrew/current/bin
+export PATH=$PATH:$HOME/.nodebrew/current/bin
 
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
