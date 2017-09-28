@@ -2,18 +2,23 @@
 # PATH
 #=======================================================
 export PATH=/usr/local/bin:$PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
-# export PATH=$PATH:/usr/local/bin
+# rbenv のためのPATH
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
 
 eval "$(direnv hook zsh)"
 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
-export PATH=$PATH:$HOME/.nodebrew/current/bin
+export PATH=$PATH:/Users/furuhama.yusuke/.nodebrew/current/bin
 
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+export PATH="/usr/local/Cellar/git/2.14.1/bin:$PATH"
+
+export PATH="/usr/local/opt/qt/bin:$PATH"
 
 #=======================================================
 # alias
@@ -33,7 +38,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gb='git branch'
 alias gch='git checkout'
-
+alias gd='git diff'
 
 #=======================================================
 # zplug
@@ -265,7 +270,17 @@ function current_dir() {
 PROMPT='$(current_dir)$(vcs_info_with_color) %{${fg[yellow]}%}$%{${reset_color}%} '
 
 # iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
-function chpwd() { ls; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
+function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
+
+# pecoに関する設定(インクリメンタルサーチ用)
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 
 
 # よくわからんやつ
