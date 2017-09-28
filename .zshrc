@@ -53,17 +53,12 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "unixorn/rake-completion.zshplugin"
 zplug "zsh-users/zsh-history-substring-search"
-# zplug "Tarrasch/zsh-functional"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# zplug "zsh-users/zaw", defer:2
 zplug "djui/alias-tips"
 zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
     rename-to:jq
-# zplug "b4b4r07/emoji-cli", \
-#     on:"stedolan/jq"
-# zplug "mrowa44/emojify", as:command, use:emojify
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -91,7 +86,6 @@ setopt correct
 
 #cd
 setopt auto_cd
-function chpwd() { ls -a }
 
 setopt auto_pushd
 
@@ -144,7 +138,6 @@ export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
 export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
-
 
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 
@@ -274,27 +267,6 @@ PROMPT='$(current_dir)$(vcs_info_with_color) %{${fg[yellow]}%}$%{${reset_color}%
 # ----------------------
 # Git log find by commit message
 function glf() { $git log --all --grep="$1"; }
-
-# zshで特定のコマンドをヒストリに追加しない条件を柔軟に設定する
-# http://mollifier.hatenablog.com/entry/20090728/p1
-zshaddhistory() {
-  local line=${1%%$'\n'}
-  local cmd=${line%% *}
-
-  # 以下の条件をすべて満たすものだけをヒストリに追加する
-  [[ ${#line} -ge 10
-      # && ${cmd} != (l|l[sal])
-      # && ${cmd} != (c|cd)
-      # && ${cmd} != (m|man)
-      # && ${cmd} != (r[mr])
-      # && ${cmd} != (kill)
-      # && ${cmd} != (tmux)
-      # && ${cmd} != (vim)
-      # && ${cmd} != (bundle)
-      # && ${cmd} != (rails)
-      # && ${cmd} != (gfu|grb|gco|gcob|ga|gclf|gps|gpsuo)
-  ]]
-}
 
 # iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
 function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
