@@ -40,16 +40,12 @@ NeoBundle 'tomtom/tcomment_vim'
 " シングルクオートとダブルクオートの入れ替え等
 NeoBundle 'tpope/vim-surround'
 
-" インデントに色を付けて見やすくする
-NeoBundle 'nathanaelkane/vim-indent-guides'
 " ログファイルを色づけしてくれる
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 " 行末の半角スペースを可視化(うまく動かない？)
 NeoBundle 'bronson/vim-trailing-whitespace'
 " less用のsyntaxハイライト
 NeoBundle 'KohPoll/vim-less'
-
-" 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
 
 call neobundle#end()
 
@@ -120,12 +116,8 @@ highlight LineNr ctermfg=darkyellow
 set noerrorbells
 """"""""""""""""""""""""""""""
 
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup = 1
-
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
-
 
 """"""""""""""""""""""""""""""
 "### for NERDTree

@@ -1,31 +1,45 @@
 #=======================================================
 # PATH
 #=======================================================
+# PATH for rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
-export PATH="/usr/local/Cellar/git/2.14.1/bin:$PATH"
-export PATH="/Users/yuusuke/anaconda3/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/Cellar/git/2.14.2/bin:$PATH"
+
+# pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
+export PYENV_ROOT=/usr/local/var/pyenv
+
+# pyenvさんに自動補完機能を提供してもらう
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 #=======================================================
 # alias
 #=======================================================
 
+# git
 alias gs='git status'
-alias gc='git commit'
+alias gc='git commit -m'
 alias ga='git add'
 alias gd='git diff'
 alias gl='git log'
-alias gb='git branch'
+alias gb='git branch -a'
 alias gch='git checkout'
+
+# vim, zsh
 alias v='vim'
 alias vi='vim'
 alias zshrc='vim ~/.zshrc'
+
+# python
 alias jupy='jupyter notebook'
 
+# ruby
+alias be='bundle exec'
 
 #=======================================================
 # zplug
@@ -253,7 +267,6 @@ function current_dir() {
   echo `pwd | rev | cut -d '/' -f 1 | rev`
 }
 
-# PROMPT='$(rbenv_version) %{${fg[green]}%}${USER}%{${reset_color}%}:$(current_dir)$(vcs_info_with_color) %{${fg[yellow]}%}$%{${reset_color}%} '
 PROMPT='$(current_dir)$(vcs_info_with_color) %{${fg[yellow]}%}$%{${reset_color}%} '
 
 # ----------------------
@@ -261,9 +274,6 @@ PROMPT='$(current_dir)$(vcs_info_with_color) %{${fg[yellow]}%}$%{${reset_color}%
 # ----------------------
 # Git log find by commit message
 function glf() { $git log --all --grep="$1"; }
-
-# history setting
-# [# 履歴ファイルの保存先 export HISTFILE=${HOME}/.zsh_history  # メモリに保存される履歴の件数 export HISTSIZE=1000  # 履歴ファイルに保存される履歴の件数 export SAVEHIST=100000  # 重複を記録しない setopt hist_ignore_dups  # 開始と終了を記録 setopt EXTENDED_HISTORY](http://qiita.com/syui/items/c1a1567b2b76051f50c4)
 
 # zshで特定のコマンドをヒストリに追加しない条件を柔軟に設定する
 # http://mollifier.hatenablog.com/entry/20090728/p1
@@ -286,9 +296,16 @@ zshaddhistory() {
   ]]
 }
 
-#title
-precmd() {
-  # echo -ne "\033]0;${USER}@${HOST}\007"
-  # print -Pn "\e]0;%n@%m: %~\a"
-  print -Pn "\e]0;$(current_dir)\a"
+# iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
+function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
+
+# pecoに関する設定(インクリメンタルサーチ用)
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
 }
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
