@@ -59,6 +59,7 @@ zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
     rename-to:jq
+zplug "sorin-ionescu/prezto"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
