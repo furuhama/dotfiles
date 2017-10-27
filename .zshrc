@@ -1,21 +1,38 @@
 #=======================================================
 # PATH
 #=======================================================
-# PATH for rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/Cellar/git/2.14.2/bin:$PATH"
 
+# PATH for rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
 export PYENV_ROOT=/usr/local/var/pyenv
 
 # pyenvさんに自動補完機能を提供してもらう
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# nvm(node.js)
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# scheme
+export PATH="/Applications/Racket v6.10.1/bin:$PATH"
+
+# gopath
+export GOPATH=$HOME/workspace/go
+export PATH=$PATH:$GOPATH/bin
+
+# npm
+export NODE_PATH=$(npm root -g)
 
 #=======================================================
 # alias
@@ -27,13 +44,14 @@ alias gc='git commit -m'
 alias ga='git add'
 alias gd='git diff'
 alias gl='git log'
-alias gb='git branch -a'
+alias gb='git branch'
 alias gch='git checkout'
 
 # vim, zsh
 alias v='vim'
 alias vi='vim'
 alias zshrc='vim ~/.zshrc'
+alias zpreztorc='vim ~/.zpreztorc'
 
 # python
 alias jupy='jupyter notebook'
@@ -80,14 +98,13 @@ zplug load --verbose
 # zsh config
 #=======================================================
 autoload colors && colors
-# autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 autoload -Uz compinit && compinit -C
 
 setopt no_flow_control
 
 # タイポしているコマンドを指摘
-setopt correct
+# setopt correct
 
 #cd
 setopt auto_cd
@@ -148,6 +165,17 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 
 #大文字小文字を意識しない補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# プロンプトにviのモードを表示する
+function zle-line-init zle-keymap-select {
+    VIM_NORMAL="%K{208}%F{black}%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}%k%f"
+    VIM_INSERT="%K{075}%F{black}%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}%k%f"
+    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 #=======================================================
 
