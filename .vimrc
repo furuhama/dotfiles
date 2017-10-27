@@ -1,5 +1,3 @@
-" 挙動を vi 互換ではなく、Vim のデフォルト設定にする
-set nocompatible
 " 一旦ファイルタイプ関連を無効化する
 filetype off
 
@@ -8,6 +6,7 @@ filetype off
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
 if has('vim_starting')
+  " 挙動を vi 互換ではなく、Vim のデフォルト設定にする
   set nocompatible               " Be iMproved
 
   " Required:
@@ -21,10 +20,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" ファイルオープンを便利に
-NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
-NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
 " Gitを便利に使う
@@ -42,10 +37,16 @@ NeoBundle 'tpope/vim-surround'
 
 " ログファイルを色づけしてくれる
 NeoBundle 'vim-scripts/AnsiEsc.vim'
-" 行末の半角スペースを可視化(うまく動かない？)
+" 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
-" less用のsyntaxハイライト
+" syntaxハイライト
 NeoBundle 'KohPoll/vim-less'
+" syntaxを強化
+NeoBundle 'sheerun/vim-polyglot'
+" 括弧などを自動補完
+NeoBundle 'jiangmiao/auto-pairs'
+" 補完機能
+NeoBundle 'Shougo/neocomplete.vim'
 
 call neobundle#end()
 
@@ -81,6 +82,9 @@ set showcmd
 set smartcase
 " 検索結果をハイライト表示する
 set hlsearch
+" 検索結果のハイライトをESC連打で消す
+set hlsearch
+noremap <Esc><Esc> :nohlsearch<CR><Esc>
 " 構文毎に文字色を変化させる
 syntax on
 set t_Co=256
@@ -114,10 +118,14 @@ set whichwrap=b,s,h,l,<,>,[,]
 highlight LineNr ctermfg=darkyellow
 " error bellをオフに
 set noerrorbells
-""""""""""""""""""""""""""""""
+" 文字の削除を有効に
+set backspace=indent,eol,start
+" Thanks for flying vim を表示しない
+set notitle
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
+
 
 """"""""""""""""""""""""""""""
 "### for NERDTree
@@ -163,5 +171,84 @@ function! s:GetHighlight(hi)
 endfunction
 """"""""""""""""""""""""""""""
 
+
+""""""""""""""""""""""""""""""
+" NeoComplete の補完を有効にする
+""""""""""""""""""""""""""""""
+"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
+""""""""""""""""""""""""""""""
 filetype on
