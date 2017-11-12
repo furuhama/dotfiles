@@ -1,0 +1,34 @@
+[[plugins]] # completion
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]] # edit status line
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {'colorscheme': 'wombat'}
+'''
+
+[[plugins]] #toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]] # golang
+repo = 'fatih/vim-go'
+
+[[plugins]] # completion golang
+repo = 'zchee/deoplete-go'
+
+[[plugins]] # markdown
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]] # Japanese doc
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+    set helplang=ja,en
+'''
+
+[[plugins]] # like NERDTree
+repo = 'justinmk/vim-dirvish'
+
