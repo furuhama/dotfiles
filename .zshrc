@@ -24,15 +24,19 @@ eval "$(direnv hook zsh)"
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
-# scheme
-export PATH="/Applications/Racket v6.10.1/bin:$PATH"
-
 # gopath
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$GOPATH/bin
 
 # npm
 export NODE_PATH=$(npm root -g)
+
+# Opam(OCaml package manager)
+eval "$(opam config env)"
+
+# Julia
+export PATH="/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH"
+
 
 #=======================================================
 # alias
@@ -50,7 +54,9 @@ alias gch='git checkout'
 # vim, zsh
 alias v='vim'
 alias vi='vim'
+alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
+alias srczsh='source ~/.zshrc'
 alias zpreztorc='vim ~/.zpreztorc'
 
 # python
