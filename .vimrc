@@ -41,6 +41,10 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'itchyny/lightline.vim'
 " vim-go
 NeoBundle 'fatih/vim-go'
+" rust
+NeoBundle 'rust-lang/rust.vim'
+" rust racer
+NeoBundle 'racer-rust/vim-racer'
 
 call neobundle#end()
 
@@ -206,6 +210,17 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 """"""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+"### for rust
+""""""""""""""""""""""""""""""
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let $RUST_SRC_PATH="/usr/local/src/rustc-1.5.0/src"
+""""""""""""""""""""""""""""""
+
 
 
 """"""""""""""""""""""""""""""
