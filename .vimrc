@@ -1,7 +1,6 @@
 " 一旦ファイルタイプ関連を無効化する
 filetype off
 
-
 """"""""""""""""""""""""""""""
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
@@ -24,17 +23,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree'
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
-
 " Rails向けのコマンドを提供する
 NeoBundle 'tpope/vim-rails'
-" Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
-
-" コメントON/OFFを手軽に実行
-NeoBundle 'tomtom/tcomment_vim'
-" シングルクオートとダブルクオートの入れ替え等
-NeoBundle 'tpope/vim-surround'
-
 " ログファイルを色づけしてくれる
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 " 行末の半角スペースを可視化
@@ -43,10 +33,14 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'KohPoll/vim-less'
 " syntaxを強化
 NeoBundle 'sheerun/vim-polyglot'
-" 括弧などを自動補完
-NeoBundle 'jiangmiao/auto-pairs'
 " 補完機能
 NeoBundle 'Shougo/neocomplete.vim'
+" quickrun
+NeoBundle 'thinca/vim-quickrun'
+" ステータスラインをかっこよく
+NeoBundle 'itchyny/lightline.vim'
+" vim-go
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 
@@ -68,20 +62,18 @@ set ruler
 set cmdheight=2
 " エディタウィンドウの末尾から2行目にステータスラインを常時表示させる
 set laststatus=2
-" ステータス行に表示させる情報の指定(どこからかコピペしたので細かい意味はわかっていない)
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 " ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
+" set statusline+=%{fugitive#statusline()}
 " ウインドウのタイトルバーにファイルのパス情報等を表示する
 set title
 " コマンドラインモードで<Tab>キーによるファイル名補完を有効にする
 set wildmenu
 " 入力中のコマンドを表示する
 set showcmd
+" モード表示
+set showmode
 " 小文字のみで検索したときに大文字小文字を無視する
 set smartcase
-" 検索結果をハイライト表示する
-set hlsearch
 " 検索結果のハイライトをESC連打で消す
 set hlsearch
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
@@ -115,7 +107,9 @@ set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 " 行番号の色
-highlight LineNr ctermfg=darkyellow
+highlight LineNr ctermfg=red
+" turn off visual bell(空文字代入)
+set visualbell t_vb=
 " error bellをオフに
 set noerrorbells
 " 文字の削除を有効に
@@ -134,6 +128,83 @@ let NERDTreeShowHidden=1
 
 "### NERDTreeをCtrl+eで起動
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+"### for lightline
+""""""""""""""""""""""""""""""
+let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ 'mode_map': {'c': 'NORMAL'},
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \ },
+        \ 'component_function': {
+        \   'modified': 'LightlineModified',
+        \   'readonly': 'LightlineReadonly',
+        \   'fugitive': 'LightlineFugitive',
+        \   'filename': 'LightlineFilename',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filetype': 'LightlineFiletype',
+        \   'fileencoding': 'LightlineFileencoding',
+        \   'mode': 'LightlineMode'
+        \ }
+        \ }
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! LightlineFilename()
+  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
+
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+"### for vim-go
+""""""""""""""""""""""""""""""
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
 """"""""""""""""""""""""""""""
 
 
@@ -190,7 +261,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -216,7 +287,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
 "let g:neocomplete#enable_auto_select = 1
