@@ -13,6 +13,8 @@ eval "$(rbenv init -)"
 
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
 export PYENV_ROOT=/usr/local/var/pyenv
+alias conda_activate="source $PYENV_ROOT/versions/anaconda3-5.0.1/bin/activate"
+export PATH="$PYENV_ROOT/versions/anaconda3-5.0.1/bin:$PATH"
 
 # pyenvさんに自動補完機能を提供してもらう
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -44,7 +46,9 @@ export PATH="/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH"
 
 # git
 alias gs='git status'
-alias gc='git commit -m'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gcv='git commit -v'
 alias ga='git add'
 alias gd='git diff'
 alias gl='git log'
