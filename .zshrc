@@ -7,6 +7,10 @@ export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/Cellar/git/2.14.2/bin:$PATH"
 
+# Homebrew で pyenv 関連で出る Error 対策
+# brew コマンド実行時のみ PATH を変更する
+alias brew="PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin brew"
+
 # PATH for rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -39,6 +43,14 @@ eval "$(opam config env)"
 # Julia
 export PATH="/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH"
 
+# Racer(Rust code completion)
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fpath+=~/.zfunc
+source ~/.cargo/env
+
+# Haskell
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+
 
 #=======================================================
 # alias
@@ -46,8 +58,7 @@ export PATH="/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH"
 
 # git
 alias gs='git status'
-alias gc='git commit'
-alias gcm='git commit -m'
+alias gc='git commit -m'
 alias gcv='git commit -v'
 alias ga='git add'
 alias gd='git diff'

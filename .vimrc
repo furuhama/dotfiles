@@ -45,6 +45,8 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'rust-lang/rust.vim'
 " rust racer
 NeoBundle 'racer-rust/vim-racer'
+" python
+NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
 
@@ -71,7 +73,7 @@ set laststatus=2
 " ウインドウのタイトルバーにファイルのパス情報等を表示する
 set title
 " コマンドラインモードで<Tab>キーによるファイル名補完を有効にする
-set wildmenu
+set wildmenu wildmode=list:longest,full
 " 入力中のコマンドを表示する
 set showcmd
 " モード表示
@@ -120,6 +122,8 @@ set noerrorbells
 set backspace=indent,eol,start
 " Thanks for flying vim を表示しない
 set notitle
+" 履歴の表示件数を増やす
+set history=10000
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
@@ -217,8 +221,8 @@ let g:go_highlight_extra_types = 1
 """"""""""""""""""""""""""""""
 let g:rustfmt_autosave = 1
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+let g:syntastic_rust_checkers = ['cargo']
 let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let $RUST_SRC_PATH="/usr/local/src/rustc-1.5.0/src"
 """"""""""""""""""""""""""""""
 
 
