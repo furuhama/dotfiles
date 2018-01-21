@@ -187,29 +187,19 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 #大文字小文字を意識しない補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# プロンプトにviのモードを表示する
-function zle-line-init zle-keymap-select {
-    VIM_NORMAL="%K{208}%F{black}%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}%k%f"
-    VIM_INSERT="%K{075}%F{black}%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}%k%f"
-    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
 #=======================================================
 
-
-#----------------------------------
-# for prezto
-#----------------------------------
 
 # ----------------------
 # Git Function
 # ----------------------
 # Git log find by commit message
 function glf() { $git log --all --grep="$1"; }
+# ----------------------
+
+# ----------------------
+# others
+# ----------------------
 
 # iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
 function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
