@@ -21,8 +21,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
-" Gitを便利に使う
+" Gitをvim上から利用
 NeoBundle 'tpope/vim-fugitive'
+" Git差分表示
+NeoBundle 'airblade/vim-gitgutter'
 " Rails向けのコマンドを提供する
 NeoBundle 'tpope/vim-rails'
 " ログファイルを色づけしてくれる
@@ -134,8 +136,18 @@ autocmd QuickFixCmdPost *grep* cwindow
 """"""""""""""""""""""""""""""
 let NERDTreeShowHidden=1
 
-"### NERDTreeをCtrl+eで起動
+" NERDTreeをCtrl+eで起動
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" いくつかのファイルを無視
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$']
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+"### fir GitGutter
+""""""""""""""""""""""""""""""
+" 起動時からGitGutterで差分表示
+let g:gitgutter_highlight_lines = 1
 """"""""""""""""""""""""""""""
 
 
