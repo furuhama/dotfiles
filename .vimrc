@@ -47,8 +47,6 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'rust-lang/rust.vim'
 " rust racer
 NeoBundle 'racer-rust/vim-racer'
-" python
-NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
 
@@ -139,15 +137,7 @@ let NERDTreeShowHidden=1
 " NERDTreeをCtrl+eで起動
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " いくつかのファイルを無視
-let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$']
-""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
-"### fir GitGutter
-""""""""""""""""""""""""""""""
-" 起動時からGitGutterで差分表示
-let g:gitgutter_highlight_lines = 1
+let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode']
 """"""""""""""""""""""""""""""
 
 
