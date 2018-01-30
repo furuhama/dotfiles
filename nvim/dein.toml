@@ -22,6 +22,22 @@ hook_add = '''
     let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode']
 '''
 
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+    let g:NERDSpaceDelims=1
+    let g:NERDDefaultAlign='left'
+'''
+
+[[plugin]]
+repo = 'rhysd/clever-f.vim'
+hook_add = '''
+    let g:clever_f_ignore_case=1
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+
 # ==========================
 # Language server & lint
 # ==========================

@@ -33,6 +33,7 @@ set backspace=indent,eol,start
 set notitle
 set noswapfile
 set history=10000
+tnoremap <silent> <ESC> <C-\><C-n>
 
 autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType haskell set tabstop=4 shiftwidth=4
