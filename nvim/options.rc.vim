@@ -12,6 +12,7 @@ set smartcase
 set hlsearch
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
 set t_Co=256
+set termguicolors
 set expandtab
 set incsearch
 set hidden

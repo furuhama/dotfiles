@@ -34,6 +34,13 @@ hook_add = '''
     let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode']
 '''
 
+[[plugins]]
+repo = 'jonathanfilip/vim-lucius'
+hook_add = '''
+    colorscheme lucius
+    set background=dark
+'''
+
 [[plugins]] # ステータスライン
 repo = 'itchyny/lightline.vim'
 hook_add = '''
