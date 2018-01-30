@@ -1,9 +1,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]] # hybrid
-repo = 'w0ng/vim-hybrid'
-
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 

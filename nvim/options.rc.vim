@@ -25,7 +25,7 @@ set tabstop=2
 set shiftwidth=2
 set smarttab
 set whichwrap=b,s,h,l,<,>,[,]
-" highlight LineNr ctermfg=red
+highlight LineNr ctermfg=red
 set visualbell t_vb=
 set noerrorbells
 set backspace=indent,eol,start
