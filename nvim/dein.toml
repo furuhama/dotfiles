@@ -1,6 +1,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# ==========================
+# basic
+# ==========================
+
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
@@ -11,10 +15,21 @@ repo = 'KohPoll/vim-less'
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    let NERDTreeShowHidden=1
+    nnoremap <silent><C-e> :NERDTreeToggle<CR>
+    let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode']
+'''
+
+# ==========================
+# Language server & lint
+# ==========================
+
+[[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
-depends = 'deoplete.nvim'
-on_ft = ['rust']
-build = './install.sh'
+rev = 'next'
+build = 'bash install.sh'
 hook_source = '''
     set hidden
     let g:LanguageClient_serverCommands = {
@@ -27,12 +42,17 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
+repo = 'w0rp/ale'
 hook_add = '''
-    let NERDTreeShowHidden=1
-    nnoremap <silent><C-e> :NERDTreeToggle<CR>
-    let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode']
+    let g:ale_sign_error = '>>'
+    let g:ale_sign_warning = '=='
+    let g:ale_echo_msg_format = '[%linter%] %s'
+    let g:ale_lint_on_text_changed = 'normal'
 '''
+
+# ==========================
+# color scheme
+# ==========================
 
 [[plugins]]
 repo = 'jonathanfilip/vim-lucius'
@@ -40,6 +60,10 @@ hook_add = '''
     colorscheme lucius
     set background=dark
 '''
+
+# ==========================
+# status line
+# ==========================
 
 [[plugins]] # ステータスライン
 repo = 'itchyny/lightline.vim'
@@ -58,7 +82,8 @@ hook_add = '''
             \   'fileformat': 'LightlineFileformat',
             \   'filetype': 'LightlineFiletype',
             \   'fileencoding': 'LightlineFileencoding',
-            \   'mode': 'LightlineMode'
+            \   'mode': 'LightlineMode',
+            \   'ale': 'ALEGetStatusLine'
             \ }
             \ }
 
