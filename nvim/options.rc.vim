@@ -38,6 +38,7 @@ tnoremap <C-q> <C-\><C-n>:q<CR>
 nnoremap @t :tabe<CR>:terminal<CR>
 noremap : ;
 noremap ; :
+let mapleader=","
 
 autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType haskell set tabstop=4 shiftwidth=4
