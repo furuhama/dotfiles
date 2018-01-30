@@ -10,7 +10,6 @@ set showcmd
 set showmode
 set smartcase
 set hlsearch
-noremap <Esc><Esc> :nohlsearch<CR><Esc>
 set t_Co=256
 set termguicolors
 set expandtab
@@ -33,7 +32,10 @@ set backspace=indent,eol,start
 set notitle
 set noswapfile
 set history=10000
+noremap <Esc><Esc> :nohlsearch<CR><Esc>
 tnoremap <silent> <ESC> <C-\><C-n>
+tnoremap <C-q> <C-\><C-n>:q<CR>
+nnoremap @t :tabe<CR>:terminal<CR>
 
 autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType haskell set tabstop=4 shiftwidth=4
