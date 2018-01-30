@@ -68,14 +68,14 @@ alias gd='git diff'
 alias gl='git log'
 alias gb='git branch'
 alias gch='git checkout'
+alias gg='git grep'
 
 # vim, zsh
-alias v='vim'
-alias vi='vim'
-alias vimrc='vim ~/.vimrc'
-alias zshrc='vim ~/.zshrc'
+alias v='nvim'
+alias vi='nvim'
+alias zshrc='nvim ~/.zshrc'
 alias srczsh='source ~/.zshrc'
-alias zpreztorc='vim ~/.zpreztorc'
+alias zpreztorc='nvim ~/.zpreztorc'
 
 # python
 alias jupy='jupyter notebook'
