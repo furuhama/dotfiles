@@ -139,54 +139,38 @@ setopt prompt_subst
 
 # historyの共有
 setopt share_history
-
 # 重複を記録しない
 setopt hist_ignore_dups
-
 # ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
 setopt hist_ignore_all_dups
-
 # スペースで始まるコマンド行はヒストリリストから削除
 setopt hist_ignore_space
-
 # 余分な空白は詰めて記録
 setopt hist_reduce_blanks
-
 # 古いコマンドと同じものは無視
 setopt hist_save_no_dups
-
 # historyコマンドは履歴に登録しない
 setopt hist_no_store
-
 # 補完時にヒストリを自動的に展開
 setopt hist_expand
-
 # 履歴をインクリメンタルに追加
 setopt inc_append_history
-
 # 開始と終了を記録
 setopt EXTENDED_HISTORY
-
 # コマンドラインでもコメントアウトができるように
 setopt interactive_comments
-
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
-
 # メモリに保存される履歴の件数
 export HISTSIZE=1000000
-
 # 履歴ファイルに保存される履歴の件数
 export SAVEHIST=1000000
-
 #color
 export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
 export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
-
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
-
 #大文字小文字を意識しない補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -206,7 +190,6 @@ function glf() { $git log --all --grep="$1"; }
 
 # iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
 function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
-
 # pecoに関する設定(インクリメンタルサーチ用)
 function peco-history-selection() {
     BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
