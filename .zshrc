@@ -83,6 +83,9 @@ alias jupy='jupyter notebook'
 # ruby
 alias be='bundle exec'
 
+# function to echo $PATH
+function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
+
 #=======================================================
 # zplug
 #=======================================================
