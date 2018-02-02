@@ -5,7 +5,6 @@ export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/Cellar/git/2.14.2/bin:$PATH"
 
 # Homebrew で pyenv 関連で出る Error 対策
 # brew コマンド実行時のみ PATH を変更する
