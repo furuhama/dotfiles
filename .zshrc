@@ -53,7 +53,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # neovim
 export XDG_CONFIG_HOME="$HOME/.config"
 
-
 #=======================================================
 # alias
 #=======================================================
@@ -81,6 +80,7 @@ alias jupy='jupyter notebook'
 
 # ruby
 alias be='bundle exec'
+alias rubinius='/usr/local/opt/rubinius/bin/ruby'
 
 # function to echo $PATH
 function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
