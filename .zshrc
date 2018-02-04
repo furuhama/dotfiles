@@ -67,6 +67,8 @@ alias gl='git log'
 alias gb='git branch'
 alias gch='git checkout'
 alias gg='git grep'
+alias gish='git push'
+alias gill='git pull'
 
 # vim, zsh
 alias v='nvim'
