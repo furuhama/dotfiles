@@ -2,6 +2,7 @@
 " display settings
 " ======================
 set ruler
+set cursorline
 set cmdheight=2
 set laststatus=2
 set title
@@ -25,7 +26,6 @@ set tabstop=2
 set shiftwidth=2
 set smarttab
 set whichwrap=b,s,h,l,<,>,[,]
-highlight LineNr ctermfg=red
 set visualbell t_vb=
 set noerrorbells
 set backspace=indent,eol,start
