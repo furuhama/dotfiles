@@ -39,8 +39,8 @@ nnoremap @t :tabe<CR>:terminal<CR>
 noremap : ;
 noremap ; :
 noremap st :<C-u>tabnew<CR>
-noremap sn gt
-noremap sp gT
+noremap <C-n> gt
+noremap <C-p> gT
 let mapleader=","
 
 autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
