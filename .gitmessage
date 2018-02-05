@@ -1,0 +1,23 @@
+
+# ==== Emojis ====
+# 🆕  新規実装
+# 🐛  バグ修正
+# 🤘  機能改善
+# ✨  部分的な機能追加
+# 🎉  盛大に祝うべき大きな機能追加
+# ♻️   リファクタリング
+# 👮  アラート等の修正
+# 🚿  不要な機能・使われなくなった機能の削除
+# 💚  テストやCIの修正・改善
+# 👕  Lintエラーの修正やコードスタイルの修正
+# 🚀  パフォーマンス改善
+# 🆙  依存パッケージなどのアップデート
+# ✅  PR指摘反映
+# ✏️  コメントとかドキュメントの編集とか
+#
+# ==== Format ====
+# :emoji: Subject
+#
+# Commit body...
+# Reference
+# How to Write a Git Commit Message http://chris.beams.io/posts/git-commit/

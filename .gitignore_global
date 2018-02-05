@@ -1,0 +1,20 @@
+# rbenv
+.ruby-version
+
+# ignore gems installed by bundler
+/vendor/bundle/
+/.bundle
+
+# rubymine
+/.idea
+
+# VScode
+/.vs_code
+/.vscode
+*.code-workspace
+
+# vim turd
+*.swp
+
+# mac turd
+.DS_Store
