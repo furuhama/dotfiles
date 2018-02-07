@@ -21,7 +21,7 @@
 - .zpreztorc
   - zprezto setting
 - .zprezto/
-  - zprezto setting
+  - zprezto setting (edit `minimal` theme at some points)
 
 #### others
 
