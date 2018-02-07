@@ -99,7 +99,8 @@ hook_add = '''
             \ 'colorscheme': 'wombat',
             \ 'mode_map': {'c': 'NORMAL'},
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'fugitive', 'filename' ] ]
             \ },
             \ 'component_function': {
             \   'modified': 'LightlineModified',
