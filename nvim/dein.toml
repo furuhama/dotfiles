@@ -83,6 +83,7 @@ hook_add = '''
 repo = 'jonathanfilip/vim-lucius'
 hook_add = '''
     autocmd Colorscheme * highlight LineNr guifg=skyblue
+    autocmd Colorscheme * highlight Comment guifg=pink
     colorscheme lucius
     set background=dark
 '''
