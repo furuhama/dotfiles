@@ -9,7 +9,7 @@ repo = 'tpope/vim-fugitive'
 repo = 'airblade/vim-gitgutter'
 
 # ===============
-# lint
+# completion
 # ===============
 
 [[plugins]]
