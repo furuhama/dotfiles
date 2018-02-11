@@ -45,4 +45,5 @@ let mapleader=","
 
 autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType haskell set tabstop=4 shiftwidth=4
-autocmd MyAutoCmd FileType go set tabstop=4 shiftwidth=4
+autocmd MyAutoCmd FileType go set tabstop=4 shiftwidth=4 noexpandtab
+autocmd MyAutoCmd FileType markdown set tabstop=2 shiftwidth=2 expandtab
