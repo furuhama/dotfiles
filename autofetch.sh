@@ -8,6 +8,7 @@ function fetch_origin () {
   echo "fetching $1..."
   cd $1
   git fetch origin
+  git fetch -p
   echo 'end'
   echo ''
   cd ..
