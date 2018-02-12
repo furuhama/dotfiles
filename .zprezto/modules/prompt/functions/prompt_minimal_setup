@@ -43,10 +43,17 @@ function prompt_minimal_setup {
   zstyle ':vcs_info:git*+set-message:*' hooks git_status
 
   # Define prompts.
-  # 下記はバックグラウンドプロセスの数を表示している
+  # 下記部分はバックグラウンドプロセスの数を表示している
   # %F{menta}%(1j. %j.)%f
-  PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f » '
-  # PROMPT="%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ( '-') "
+
+  # 正常ver
+  # PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f » '
+
+  # 顔文字を表示したい
+  KAOMOJI="( '-')"
+  # 顔文字ver
+  PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJI} '
+
   RPROMPT=''
 }
 
