@@ -25,6 +25,10 @@ hook_post_source = '''
 '''
 
 [[plugins]]
+repo = 'uplus/deoplete-solargraph'
+on_ft = 'ruby'
+
+[[plugins]]
 repo = 'vim-scripts/AnsiEsc.vim'
 
 [[plugins]] # Toml
