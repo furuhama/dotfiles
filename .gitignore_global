@@ -18,3 +18,6 @@
 
 # mac turd
 .DS_Store
+
+# ctags
+tags
