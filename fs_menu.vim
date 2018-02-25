@@ -1,3 +1,7 @@
+" please put this config file to
+" "~/.local/share/dein/.cache/init.vim/.dein/nerdtree_plugin"
+" (only when you use nvim & dein package manager)
+"
 " ============================================================================
 " File:        fs_menu.vim
 " Description: plugin for the NERD Tree that provides a file system menu
