@@ -32,7 +32,7 @@ set backspace=indent,eol,start
 set notitle
 set noswapfile
 set history=10000
-set clipboard=unnamed,autoselect
+set clipboard+=unnamedplus
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
 tnoremap <silent> <ESC> <C-\><C-n>
 tnoremap <C-q> <C-\><C-n>:q<CR>
