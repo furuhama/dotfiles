@@ -44,6 +44,7 @@ noremap <C-n> gt
 noremap <C-p> gT
 let mapleader=","
 
+autocmd MyAutoCmd FileType c set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType haskell set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType go set tabstop=4 shiftwidth=4 noexpandtab
