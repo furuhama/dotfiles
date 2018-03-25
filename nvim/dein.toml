@@ -112,20 +112,22 @@ hook_add = '''
 # color scheme
 # ==========================
 
-# [[plugins]]
-# repo = 'jonathanfilip/vim-lucius'
-# hook_add = '''
-#     autocmd Colorscheme * highlight LineNr guifg=skyblue
-#     autocmd Colorscheme * highlight Comment guifg=pink
-#     colorscheme lucius
-#     set background=dark
-# '''
-
+# dark background colorscheme
 [[plugins]]
-repo = 'owickstrom/vim-colors-paramount'
+repo = 'jonathanfilip/vim-lucius'
 hook_add = '''
-    colorscheme paramount
+    autocmd Colorscheme * highlight LineNr guifg=skyblue
+    autocmd Colorscheme * highlight Comment guifg=pink
+    colorscheme lucius
+    set background=dark
 '''
+
+# light background colorscheme
+# [[plugins]]
+# repo = 'owickstrom/vim-colors-paramount'
+# hook_add = '''
+#     colorscheme paramount
+# '''
 
 # ==========================
 # status line
@@ -135,7 +137,7 @@ hook_add = '''
 repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
-            \ 'colorscheme': 'PaperColor',
+            \ 'colorscheme': 'wombat',
             \ 'mode_map': {'c': 'NORMAL'},
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
