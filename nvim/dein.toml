@@ -115,7 +115,7 @@ hook_add = '''
 # dark background colorscheme
 [[plugins]]
 repo = 'jonathanfilip/vim-lucius'
-hook_add = '''
+hook_post_source = '''
     autocmd Colorscheme * highlight LineNr guifg=skyblue
     autocmd Colorscheme * highlight Comment guifg=pink
     colorscheme lucius
@@ -125,15 +125,8 @@ hook_add = '''
 # light background colorscheme
 # [[plugins]]
 # repo = 'owickstrom/vim-colors-paramount'
-# hook_add = '''
+# hook_post_source = '''
 #     colorscheme paramount
-# '''
-
-# [[plugins]]
-# repo = 'google/vim-colorscheme-primary'
-# hook_add = '''
-#     colorscheme primary
-#     set background=light
 # '''
 
 # ==========================
