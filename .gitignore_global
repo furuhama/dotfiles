@@ -1,6 +1,9 @@
 # rbenv
 .ruby-version
 
+# pyenv
+.python-version
+
 # ignore gems installed by bundler
 /vendor/bundle/
 /.bundle
