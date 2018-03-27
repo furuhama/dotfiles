@@ -129,6 +129,13 @@ hook_add = '''
 #     colorscheme paramount
 # '''
 
+# [[plugins]]
+# repo = 'google/vim-colorscheme-primary'
+# hook_add = '''
+#     colorscheme primary
+#     set background=light
+# '''
+
 # ==========================
 # status line
 # ==========================
