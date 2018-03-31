@@ -141,13 +141,14 @@ hook_add = '''
             \ 'mode_map': {'c': 'NORMAL'},
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'fugitive', 'filename' ] ]
+            \             [ 'fugitive', 'dirname' ] ]
             \ },
             \ 'component_function': {
             \   'modified': 'LightlineModified',
             \   'readonly': 'LightlineReadonly',
             \   'fugitive': 'LightlineFugitive',
-            \   'filename': 'LightlineFilename',
+            \   'dirname': 'LightlineDirname',
+            " \   'filename': 'LightlineFilename',
             \   'fileformat': 'LightlineFileformat',
             \   'filetype': 'LightlineFiletype',
             \   'fileencoding': 'LightlineFileencoding',
@@ -164,14 +165,20 @@ hook_add = '''
       return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
     endfunction
 
-    function! LightlineFilename()
-      return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-            \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-            \  &ft == 'unite' ? unite#get_status_string() :
-            \  &ft == 'vimshell' ? vimshell#get_status_string() :
-            \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-            \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+    function! LightlineDirname()
+      return expand('%')
     endfunction
+
+    " not use this function, use LightlineDirname
+    "
+    " function! LightlineFilename()
+    "   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+    "         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+    "         \  &ft == 'unite' ? unite#get_status_string() :
+    "         \  &ft == 'vimshell' ? vimshell#get_status_string() :
+    "         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+    "         \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+    " endfunction
 
     function! LightlineFugitive()
       if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
