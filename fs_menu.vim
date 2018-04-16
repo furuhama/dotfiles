@@ -1,5 +1,5 @@
 " please put this config file to
-" "~/.local/share/dein/.cache/init.vim/.dein/nerdtree_plugin"
+" "~/.local/share/dein/.cache/init.vim/.dein/nerdtree_plugin/"
 " (only when you use nvim & dein package manager)
 "
 " ============================================================================
