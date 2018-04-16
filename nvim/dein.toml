@@ -36,7 +36,10 @@ hook_add = '''
 repo = 'osyo-manga/vim-over'
 
 [[plugins]]
-repo = 'rking/ag.vim'
+repo = 'mileszs/ack.vim'
+hook_add = '''
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+'''
 
 # ==========================
 # Language server & lint

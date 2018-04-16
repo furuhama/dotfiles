@@ -238,9 +238,9 @@ function! NERDTreeGrep()
 
     try
         exec 'silent cd ' . dirnode.path.str()
-        " grep から Ag 利用に書き換え
+        " grep から Ack 利用に書き換え
         " exec 'silent grep -rn ' . pattern . ' .'
-        exec 'silent Ag ' . pattern . ' .'
+        exec 'silent Ack ' . pattern . ' .'
         " exec 'silent grep -rn ' . pattern . ' ' . dirnode.path.str()
     finally
         let &shellpipe = old_shellpipe
