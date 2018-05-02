@@ -71,7 +71,6 @@ alias gish='git push'
 alias gill='git pull'
 
 # vim, zsh
-alias v='nvim'
 alias vi='nvim'
 alias zshrc='nvim ~/.zshrc'
 alias srczsh='source ~/.zshrc'
