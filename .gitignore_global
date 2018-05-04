@@ -6,7 +6,6 @@
 
 # ignore gems installed by bundler
 /vendor/bundle/
-/.bundle
 
 # rubymine
 /.idea
