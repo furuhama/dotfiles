@@ -41,6 +41,9 @@ hook_add = '''
     let g:ackprg = 'ag --nogroup --nocolor --column'
 '''
 
+[[plugins]]
+repo = 'kien/ctrlp.vim'
+
 # ==========================
 # Language server & lint
 # ==========================
