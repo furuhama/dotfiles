@@ -23,7 +23,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'kien/ctrlp.vim'
+repo = 'ctrlpvim/ctrlp.vim'
 
 # ===============
 # editting
