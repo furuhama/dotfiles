@@ -1,0 +1,8 @@
+--append=yes
+--recurse=yes
+--languages=ruby
+--exclude=*.js
+--exclude=.git
+--exclude=log
+--exclude=node_modules
+--exclude=vendor
