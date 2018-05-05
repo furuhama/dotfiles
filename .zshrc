@@ -18,11 +18,11 @@ source ~/.rbenv_init
 
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
 export PYENV_ROOT=/usr/local/var/pyenv
-alias conda_activate="source $PYENV_ROOT/versions/anaconda3-5.0.1/bin/activate"
+# alias conda_activate="source $PYENV_ROOT/versions/anaconda3-5.0.1/bin/activate"
 export PATH="$PYENV_ROOT/versions/anaconda3-5.0.1/bin:$PATH"
-
-# pyenvさんに自動補完機能を提供してもらう
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+# pyenv init 処理が重たいので rehash を適宜手動で行うことにした
+# eval "$(pyenv init -)"
+source ~/.pyenv_init
 
 # direnv
 eval "$(direnv hook zsh)"
