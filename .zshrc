@@ -37,10 +37,10 @@ export PATH=$PATH:$GOPATH/bin
 export NODE_PATH=$(npm root -g)
 
 # Opam(OCaml package manager)
-eval "$(opam config env)"
+# eval "$(opam config env)"
 
 # Julia
-export PATH="/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH"
+# export PATH="/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH"
 
 # Racer(Rust code completion)
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
@@ -93,6 +93,7 @@ function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
 # zplug
 #=======================================================
 
+# brew upgrade 等で zsh が起動しなくなったら下記ディレクトリのシンボリックリンクをチェック
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
@@ -104,10 +105,8 @@ fi
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
-zplug "unixorn/rake-completion.zshplugin"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "djui/alias-tips"
 zplug "stedolan/jq", \
     from:gh-r, \
     as:command, \
@@ -182,13 +181,14 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 #=======================================================
 
-
 # ----------------------
 # Git Function
 # ----------------------
+
 # Git log find by commit message
 function glf() { $git log --all --grep="$1"; }
-# ----------------------
+
+#=======================================================
 
 # ----------------------
 # others
@@ -205,4 +205,3 @@ function peco-history-selection() {
 
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
-
