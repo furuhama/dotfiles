@@ -6,9 +6,6 @@ repo = 'Shougo/dein.vim'
 # ==========================
 
 [[plugins]]
-repo = 'KohPoll/vim-less'
-
-[[plugins]]
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
@@ -20,22 +17,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'scrooloose/nerdcommenter'
-hook_add = '''
-    let g:NERDSpaceDelims=1
-    let g:NERDDefaultAlign='left'
-'''
-
-[[plugin]]
-repo = 'rhysd/clever-f.vim'
-hook_add = '''
-    let g:clever_f_ignore_case=1
-'''
-
-[[plugins]]
-repo = 'osyo-manga/vim-over'
-
-[[plugins]]
 repo = 'mileszs/ack.vim'
 hook_add = '''
     let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -43,6 +24,30 @@ hook_add = '''
 
 [[plugins]]
 repo = 'kien/ctrlp.vim'
+
+# ===============
+# editting
+# ===============
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+hook_add = '''
+    let g:NERDSpaceDelims=1
+    let g:NERDDefaultAlign='left'
+'''
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# ===============
+# git
+# ===============
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
 
 # ==========================
 # Language server & lint
@@ -78,19 +83,6 @@ hook_add = '''
     let g:ale_keep_list_window_open = 1
     let g:ale_python_pylint_options = '--rcfile ~/dotfiles/.pylintrc'
 '''
-
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
-
-# ===============
-# git
-# ===============
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
 
 # ===============
 # completion
