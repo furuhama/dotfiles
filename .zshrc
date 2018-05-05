@@ -29,7 +29,7 @@ eval "$(direnv hook zsh)"
 
 # nvm(node.js)
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+# . "/usr/local/opt/nvm/nvm.sh"
 
 # gopath
 export GOPATH=$HOME/workspace/go
@@ -100,9 +100,12 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+#   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# fi
+#
+# この処理もファイルの確認を行わずに実行することにした
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-autosuggestions"
@@ -137,8 +140,10 @@ autoload -Uz compinit && compinit -C
 
 setopt no_flow_control
 
-# タイポしているコマンドを指摘
+# タイポしているコマンドを指摘したい場合以下を有効に
 # setopt correct
+# ウザいので off にしている
+unsetopt correct
 
 #cd
 setopt auto_cd
