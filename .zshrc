@@ -12,7 +12,9 @@ alias brew="PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin brew"
 
 # PATH for rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# rbenv init 処理が重たいので rehash を適宜手動で行うことにした
+# eval "$(rbenv init -)"
+source ~/.rbenv_init
 
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
 export PYENV_ROOT=/usr/local/var/pyenv
@@ -113,13 +115,16 @@ zplug "stedolan/jq", \
     rename-to:jq
 zplug "sorin-ionescu/prezto"
 
+# zsh の起動が遅いので未インストールのものをチェックする工程を飛ばしている
+# plugin をいじった場合にはここのコメントアウトを外すこと
+#
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
+# if ! zplug check --verbose; then
+#   printf "Install? [y/N]: "
+#   if read -q; then
+#     echo; zplug install
+#   fi
+# fi
 
 zplug load --verbose
 
