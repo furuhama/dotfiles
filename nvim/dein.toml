@@ -111,14 +111,32 @@ hook_add = '''
 # ==========================
 
 # dark background colorscheme
+# [[plugins]]
+# repo = 'jonathanfilip/vim-lucius'
+# hook_add = '''
+#     autocmd Colorscheme * highlight LineNr guifg=skyblue
+#     autocmd Colorscheme * highlight Comment guifg=pink
+#     colorscheme lucius
+#     set background=dark
+# '''
+
+# [[plugins]]
+# repo = 'rhysd/vim-color-spring-night'
+# hook_add = '''
+#     colorscheme spring-night
+#     set background=dark
+# '''
+
 [[plugins]]
-repo = 'jonathanfilip/vim-lucius'
+repo = 'arcticicestudio/nord-vim'
 hook_add = '''
-    autocmd Colorscheme * highlight LineNr guifg=skyblue
-    autocmd Colorscheme * highlight Comment guifg=pink
-    colorscheme lucius
+    colorscheme nord
     set background=dark
+    let g:nord_italic=1
+    let g:nord_italic_comments=1
+    let g:nord_comment_brightness = 20
 '''
+
 
 # light background colorscheme
 # [[plugins]]
@@ -135,8 +153,9 @@ hook_add = '''
 repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
+            \ 'colorscheme': 'nord',
             " \ 'colorscheme': 'PaperColor',
-            \ 'colorscheme': 'wombat',
+            " \ 'colorscheme': 'wombat',
             \ 'mode_map': {'c': 'NORMAL'},
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
