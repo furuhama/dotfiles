@@ -17,6 +17,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
 repo = 'mileszs/ack.vim'
 hook_add = '''
     let g:ackprg = 'ag --nogroup --nocolor --column'
