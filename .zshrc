@@ -74,6 +74,7 @@ alias gch='git checkout'
 alias gg='git grep'
 alias gish='git push'
 alias gill='git pull'
+alias gitch='git fetch'
 
 # vim, zsh
 alias vi='nvim'
