@@ -56,7 +56,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # PostgreSQL
-export PGDATA="/usr/local/var/postgres"
+export PGDATA=/usr/local/var/postgres
 
 #=======================================================
 # alias
