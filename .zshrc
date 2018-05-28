@@ -29,7 +29,7 @@ eval "$(direnv hook zsh)"
 
 # nvm(node.js)
 export NVM_DIR="$HOME/.nvm"
-# . "/usr/local/opt/nvm/nvm.sh"
+. "/usr/local/opt/nvm/nvm.sh"
 
 # gopath
 export GOPATH=$HOME/workspace/go
