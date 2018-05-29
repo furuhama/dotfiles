@@ -58,6 +58,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # PostgreSQL
 export PGDATA=/usr/local/var/postgres
 
+# for Hyper(electron based terminal app) to display Japanese languages
+export LANG=ja_JP.UTF-8
+
 #=======================================================
 # alias
 #=======================================================
