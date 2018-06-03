@@ -50,9 +50,16 @@ function prompt_minimal_setup {
   # PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f » '
 
   # 顔文字を表示したい
-  KAOMOJI="( '-')"
+  # KAOMOJI="( '-')"
   # 顔文字ver
-  PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJI} '
+  # PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJI} '
+
+  # いろんな顔文字をランダムで表示したい
+  KAOMOJIS=("( '-')" "( T-T)" "( .-.)" "( 0_0)" "( >_<)" "( *-*)" "( o_o)" "(′•_•)")
+  KAOMOJI_LENGTH="${#KAOMOJIS[@]}"
+  RANDOM_INDEX="${$((RANDOM % KAOMOJI_LENGTH + 1))}"
+  # いろんな顔文字ver
+  PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJIS[$RANDOM_INDEX]} '
 
   RPROMPT=''
 }
