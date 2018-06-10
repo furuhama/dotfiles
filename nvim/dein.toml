@@ -66,6 +66,13 @@ hook_add = '''
     let g:gitgutter_sign_removed            = '•'
 '''
 
+# ===============
+# ctags
+# ===============
+
+[[plugins]]
+repo = 'ludovicchabant/vim-gutentags'
+
 # ==========================
 # Language server & lint
 # ==========================
