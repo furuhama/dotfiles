@@ -13,7 +13,13 @@ repo = 'scrooloose/nerdtree'
 hook_add = '''
     let NERDTreeShowHidden=1
     nnoremap <silent><C-e> :NERDTreeToggle<CR>
-    let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode']
+    let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode', '.idea']
+'''
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+    nnoremap <F8> :TagbarToggle<CR>
 '''
 
 [[plugins]]
