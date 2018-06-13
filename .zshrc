@@ -38,6 +38,9 @@ export PATH=$PATH:$GOPATH/bin
 # npm
 export NODE_PATH=$(npm root -g)
 
+# OCaml
+alias ocaml="rlwrap ocaml"
+
 # Opam(OCaml package manager)
 # eval "$(opam config env)"
 
