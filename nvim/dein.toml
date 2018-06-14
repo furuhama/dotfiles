@@ -28,7 +28,7 @@ repo = 'ryanoasis/vim-devicons'
 [[plugins]]
 repo = 'mileszs/ack.vim'
 hook_add = '''
-    let g:ackprg = 'ag --nogroup --nocolor --column'
+    let g:ackprg = 'rg --vimgrep --no-heading'
 '''
 
 [[plugins]]
@@ -36,7 +36,7 @@ repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
     let g:ctrlp_map = '<c-s>'
     let g:ctrlp_use_caching=0
-    let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+    let g:ctrlp_user_command='rg --files %s""'
     let g:ctrlp_custom_ignore = {
       \ 'dir': '\v[\/](tmp|vendor|node_modules)$',
       \ }
