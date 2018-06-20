@@ -10,6 +10,7 @@
 	editor = nvim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore_global
 	pager = less -R -F -X
+	quotepath = false
 [commit]
 	template = ~/.gitmessage
 [alias]
