@@ -12,6 +12,7 @@ clingo
 clisp
 cmake
 delve
+dep
 direnv
 docker
 docker-compose
@@ -21,6 +22,7 @@ elasticsearch
 emacs-plus
 emojify
 epstool
+fd
 fftw
 fig2dev
 fish
@@ -124,6 +126,7 @@ ocaml
 ocamlbuild
 octave
 opam
+open-mpi
 openblas
 openjpeg
 openssl
@@ -172,9 +175,11 @@ smlnj
 source-highlight
 sphinx-doc
 sqlite
+sundials
 suite-sparse
 szip
 telnet
+texinfo
 the_silver_searcher
 tig
 tmux
@@ -186,6 +191,7 @@ veclibfort
 vim
 webp
 wget
+wine
 winetricks
 xz
 yarn
