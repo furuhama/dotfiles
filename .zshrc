@@ -64,6 +64,11 @@ export PGDATA=/usr/local/var/postgres
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
 
+# for `man` command
+# [DO NOT FORGET] Please add `:` to the last of MANPATH
+# (it is necessary to search for whole this system)
+export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/gawk/share/man:
+
 #=======================================================
 # alias
 #=======================================================
