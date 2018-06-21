@@ -35,6 +35,7 @@ fribidi
 fselect
 fzf
 gauche
+gawk
 gcc
 gcc@4.9
 gd
