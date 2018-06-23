@@ -26,6 +26,12 @@ hook_add = '''
 repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+    let g:NERDTreeLimitedSyntax = 1
+'''
+
+[[plugins]]
 repo = 'mileszs/ack.vim'
 hook_add = '''
     let g:ackprg = 'rg --vimgrep --no-heading'
