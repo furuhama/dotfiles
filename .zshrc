@@ -87,11 +87,8 @@ alias gish='git push'
 alias gill='git pull'
 alias gitch='git fetch'
 
-# vim, zsh
+# vim
 alias vi='nvim'
-alias zshrc='nvim ~/.zshrc'
-alias srczsh='source ~/.zshrc'
-alias zpreztorc='nvim ~/.zpreztorc'
 
 # python
 alias jupy='jupyter notebook'
