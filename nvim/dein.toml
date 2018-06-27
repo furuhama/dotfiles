@@ -22,14 +22,9 @@ hook_add = '''
     nnoremap <F8> :TagbarToggle<CR>
 '''
 
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
-repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-hook_add = '''
-    let g:NERDTreeLimitedSyntax = 1
-'''
+# ===============
+# search
+# ===============
 
 [[plugins]]
 repo = 'mileszs/ack.vim'
@@ -49,7 +44,7 @@ hook_add = '''
 '''
 
 # ===============
-# editting
+# display
 # ===============
 
 [[plugins]]
@@ -57,6 +52,15 @@ repo = 'scrooloose/nerdcommenter'
 hook_add = '''
     let g:NERDSpaceDelims=1
     let g:NERDDefaultAlign='left'
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+    let g:NERDTreeLimitedSyntax = 1
 '''
 
 [[plugins]]
@@ -151,6 +155,7 @@ hook_add = '''
 # ==========================
 
 # dark background colorscheme
+
 # [[plugins]]
 # repo = 'jonathanfilip/vim-lucius'
 # hook_add = '''
@@ -177,8 +182,8 @@ hook_add = '''
     let g:nord_comment_brightness = 20
 '''
 
-
 # light background colorscheme
+
 # [[plugins]]
 # repo = 'owickstrom/vim-colors-paramount'
 # hook_add = '''
