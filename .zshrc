@@ -96,10 +96,6 @@ alias jupy='jupyter notebook'
 alias be='bundle exec'
 alias rubinius='/usr/local/opt/rubinius/bin/ruby'
 
-# some command line tools
-alias awk='gawk'
-alias sed='gsed'
-
 # function to echo $PATH
 function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
 
