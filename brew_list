@@ -2,7 +2,6 @@ arpack
 aspcud
 autoconf
 automake
-boost
 bdw-gc
 boost
 cabextract
@@ -14,10 +13,12 @@ cmake
 coreutils
 delve
 dep
+diffutils
 direnv
 docker
 docker-compose
 docker-machine
+ed
 etcd
 elasticsearch
 emacs-plus
@@ -26,6 +27,7 @@ epstool
 fd
 fftw
 fig2dev
+findutils
 fish
 flac
 fltk
@@ -53,6 +55,7 @@ glpk
 glslang
 gmp
 gnu-sed
+gnu-tar
 gnuplot
 gnutls
 go
@@ -60,6 +63,7 @@ gobject-introspection
 graphicsmagick
 graphite2
 grep
+gzip
 harfbuzz
 hdf5
 heroku
@@ -105,6 +109,7 @@ little-cms2
 llvm37-julia
 lua
 luajit
+lzip
 mbedtls
 md5sha1sum
 mecab
@@ -116,6 +121,7 @@ mpc
 mpfr
 msgpack
 mysql
+nano
 nasm
 ncurses
 neovim
@@ -137,6 +143,7 @@ openssl@1.1
 p11-kit
 p7zip
 pango
+parallel
 pcre
 pcre2
 pdf2svg
