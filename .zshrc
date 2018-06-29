@@ -1,11 +1,14 @@
 #=======================================================
 # PATH
 #=======================================================
-export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# MANPATH
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
+export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/gawk/share/man:$MANPATH
 
 # Homebrew で pyenv 関連で出る Error 対策
 # brew コマンド実行時のみ PATH を変更する
@@ -64,11 +67,6 @@ export PGDATA=/usr/local/var/postgres
 
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
-
-# for `man` command
-# [DO NOT FORGET] Please add `:` to the last of MANPATH
-# (it is necessary to search for whole this system)
-export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/gawk/share/man:
 
 #=======================================================
 # alias
