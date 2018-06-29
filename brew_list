@@ -58,6 +58,7 @@ go
 gobject-introspection
 graphicsmagick
 graphite2
+grep
 harfbuzz
 hdf5
 heroku
