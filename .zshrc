@@ -1,10 +1,11 @@
 #=======================================================
 # PATH
 #=======================================================
-export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Homebrew で pyenv 関連で出る Error 対策
 # brew コマンド実行時のみ PATH を変更する
@@ -36,7 +37,7 @@ export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$GOPATH/bin
 
 # npm
-export NODE_PATH=$(npm root -g)
+export NODE_PATH=$(npm root -g):$NODE_PATH
 
 # OCaml
 alias ocaml="rlwrap ocaml"

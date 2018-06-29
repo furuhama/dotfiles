@@ -11,6 +11,7 @@ camlp4
 clingo
 clisp
 cmake
+coreutils
 delve
 dep
 direnv
