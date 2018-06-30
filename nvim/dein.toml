@@ -13,7 +13,7 @@ repo = 'scrooloose/nerdtree'
 hook_add = '''
     let NERDTreeShowHidden=1
     nnoremap <silent><C-i> :NERDTreeToggle<CR>
-    let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode', '.idea', '*.lock', '*tmp']
+    let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode', '.idea', '\.lock$', '\.temp$']
 '''
 
 [[plugins]]
