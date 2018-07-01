@@ -54,14 +54,16 @@ hook_add = '''
     let g:NERDDefaultAlign='left'
 '''
 
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+# To enable devicons, you should set the terminal font to `Cica` font.
+#
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
 
-[[plugins]]
-repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-hook_add = '''
-    let g:NERDTreeLimitedSyntax = 1
-'''
+# [[plugins]]
+# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+# hook_add = '''
+#     let g:NERDTreeLimitedSyntax = 1
+# '''
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
