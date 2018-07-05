@@ -128,6 +128,8 @@ hook_add = '''
     let g:ale_python_pylint_options = '--rcfile ~/dotfiles/.pylintrc'
     let g:ale_linters = {
         \ 'cpp': ['clang', 'cpplint'],
+        \ 'ruby': ['rubocop'],
+        \ 'slim': [],
         \ }
     let g:ale_cpp_cpplint_options = '--linelength=120'
 '''
