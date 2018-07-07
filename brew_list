@@ -15,9 +15,6 @@ delve
 dep
 diffutils
 direnv
-docker
-docker-compose
-docker-machine
 ed
 etcd
 elasticsearch
