@@ -50,11 +50,15 @@ hook_add = '''
 repo = 'junegunn/fzf'
 build = './install --bin'
 merged = '0'
+hook_add = '''
+    let g:fzf_layout = { 'down': '~30%' }
+'''
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 hook_add = '''
+    nnoremap <C-l> :Rg<CR>
     command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \ 'rg --line-number --no-heading '.shellescape(<q-args>), 0,
