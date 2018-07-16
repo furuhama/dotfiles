@@ -2,20 +2,21 @@
 # PATH
 #=======================================================
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 # MANPATH
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/gawk/share/man:$MANPATH
+export MANPATH=/usr/local/opt/erlang/lib/erlang/man:$MANPATH
 
 # Homebrew で pyenv 関連で出る Error 対策
 # brew コマンド実行時のみ PATH を変更する
 alias brew="PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin brew"
 
 # PATH for rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$HOME/.rbenv/bin:$PATH
 # rbenv init 処理が重たいので rehash を適宜手動で行うことにした
 # eval "$(rbenv init -)"
 source ~/.rbenv_init
@@ -23,7 +24,7 @@ source ~/.rbenv_init
 # pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
 export PYENV_ROOT=/usr/local/var/pyenv
 # alias conda_activate="source $PYENV_ROOT/versions/anaconda3-5.0.1/bin/activate"
-export PATH="$PYENV_ROOT/versions/anaconda3-5.0.1/bin:$PATH"
+export PATH=$PYENV_ROOT/versions/anaconda3-5.0.1/bin:$PATH
 # pyenv init 処理が重たいので rehash を適宜手動で行うことにした
 # eval "$(pyenv init -)"
 source ~/.pyenv_init
@@ -32,7 +33,7 @@ source ~/.pyenv_init
 eval "$(direnv hook zsh)"
 
 # nvm(node.js)
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR=$HOME/.nvm
 . "/usr/local/opt/nvm/nvm.sh"
 
 # gopath
@@ -57,10 +58,10 @@ fpath+=~/.zfunc
 source ~/.cargo/env
 
 # Haskell
-export PATH="$HOME/.local/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
 
 # neovim
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME=$HOME/.config
 
 # PostgreSQL
 export PGDATA=/usr/local/var/postgres
