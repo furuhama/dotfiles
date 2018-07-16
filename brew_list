@@ -21,6 +21,7 @@ elasticsearch
 emacs-plus
 emojify
 epstool
+erlang
 fd
 fftw
 fig2dev
@@ -200,6 +201,7 @@ webp
 wget
 wine
 winetricks
+wxmac
 xz
 yarn
 zlib
