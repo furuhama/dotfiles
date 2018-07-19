@@ -183,8 +183,8 @@ hook_add = '''
 
 # dark background colorscheme
 
-# [[plugins]]
-# repo = 'jonathanfilip/vim-lucius'
+[[plugins]]
+repo = 'jonathanfilip/vim-lucius'
 # hook_add = '''
 #     autocmd Colorscheme * highlight LineNr guifg=skyblue
 #     autocmd Colorscheme * highlight Comment guifg=pink
@@ -192,8 +192,8 @@ hook_add = '''
 #     set background=dark
 # '''
 
-# [[plugins]]
-# repo = 'rhysd/vim-color-spring-night'
+[[plugins]]
+repo = 'rhysd/vim-color-spring-night'
 # hook_add = '''
 #     colorscheme spring-night
 #     set background=dark
@@ -211,8 +211,8 @@ hook_add = '''
 
 # light background colorscheme
 
-# [[plugins]]
-# repo = 'owickstrom/vim-colors-paramount'
+[[plugins]]
+repo = 'owickstrom/vim-colors-paramount'
 # hook_add = '''
 #     colorscheme paramount
 # '''
