@@ -19,4 +19,4 @@
 [rebase]
 	autosquash = true
 [pull]
-	rebase = preserve
+	rebase = true
