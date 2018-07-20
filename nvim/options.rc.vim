@@ -44,7 +44,6 @@ noremap <C-n> gt
 noremap <C-p> gT
 noremap <C-a> ^
 noremap <C-e> $
-noremap <C-k> :Ack!<space>
 let mapleader=","
 
 autocmd MyAutoCmd FileType c set tabstop=4 shiftwidth=4
