@@ -18,3 +18,5 @@
   rg = "!git ls-files | xargs rg"
 [rebase]
 	autosquash = true
+[pull]
+	rebase = preserve
