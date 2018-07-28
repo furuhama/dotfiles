@@ -66,6 +66,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 # PostgreSQL
 export PGDATA=/usr/local/var/postgres
 
+# Set library path
+export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
 
