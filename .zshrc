@@ -69,6 +69,9 @@ export PGDATA=/usr/local/var/postgres
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 #=======================================================
 # alias
 #=======================================================
