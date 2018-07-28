@@ -178,6 +178,7 @@ rlwrap
 rubinius
 ruby
 ruby-build
+sdl2
 shared-mime-info
 smlnj
 source-highlight
