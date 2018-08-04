@@ -2,13 +2,11 @@
 
 --recurse=yes
 
---languages=ruby,rust
+--languages=ruby,rust,python,c,c++,go,haskell,javascript
 
 --exclude=*.js
 --exclude=.git
 --exclude=log
---exclude=node_modules
---exclude=vendor
 --exclude=client
 --exclude=.envrc
 --exclude=bin
@@ -18,4 +16,3 @@
 --exclude=tmp
 --exclude=doc
 --exclude=public
---exclude=script
