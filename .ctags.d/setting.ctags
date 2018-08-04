@@ -2,7 +2,7 @@
 
 --recurse=yes
 
---languages=ruby,rust,python,c,c++,go,haskell,javascript
+--languages=ruby,rust,python,c,c++,go,javascript
 
 --exclude=*.js
 --exclude=.git
