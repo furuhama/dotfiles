@@ -33,6 +33,8 @@ set notitle
 set noswapfile
 set history=10000
 set clipboard+=unnamedplus
+" ctags で <C-]> した時に候補が複数ある場合はリストを表示する
+set cscopetag
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
 tnoremap <silent> <ESC> <C-\><C-n>
 tnoremap <C-q> <C-\><C-n>:q<CR>
