@@ -13,14 +13,8 @@ repo = 'scrooloose/nerdtree'
 hook_add = '''
     let NERDTreeShowHidden=1
     " nnoremap <silent><C-i> :NERDTreeToggle<CR>
-    nnoremap <C-x> :NERDTreeToggle<CR>
+    nnoremap <silent><C-x> :NERDTreeToggle<CR>
     let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode', '.idea', '\tags.lock$', '\.temp$']
-'''
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
-hook_add = '''
-    nnoremap <F8> :TagbarToggle<CR>
 '''
 
 # ===============
@@ -39,13 +33,13 @@ hook_add = '''
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 hook_add = '''
-    nnoremap <C-l> :Rg<CR>
+    nnoremap <silent><C-l> :Rg<CR>
     command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \ 'rg --line-number --no-heading --smart-case '.shellescape(<q-args>), 0,
       \ fzf#vim#with_preview({'options': '--exact'}, 'right:50%:wrap')
       \ )
-    nnoremap <C-s> :GitFiles<CR>
+    nnoremap <silent><C-s> :GitFiles<CR>
 '''
 
 # ===============
