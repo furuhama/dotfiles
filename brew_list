@@ -118,7 +118,7 @@ minimal-racket
 mpc
 mpfr
 msgpack
-mysql
+mysql@5.7
 nano
 nasm
 ncurses
@@ -189,7 +189,6 @@ suite-sparse
 szip
 telnet
 texinfo
-the_silver_searcher
 tig
 tmux
 tree
