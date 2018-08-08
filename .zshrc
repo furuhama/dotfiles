@@ -72,6 +72,9 @@ export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
 
+# for mysql(5.7)
+export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
+
 export EDITOR=nvim
 export VISUAL=nvim
 
