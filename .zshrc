@@ -16,7 +16,7 @@ export MANPATH=/usr/local/opt/erlang/lib/erlang/man:$MANPATH
 alias brew="PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin brew"
 
 # PATH for rbenv
-export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$HOME/.rbenv/shims:$PATH
 # rbenv init 処理が重たいので rehash を適宜手動で行うことにした
 # eval "$(rbenv init -)"
 source ~/.rbenv_init
