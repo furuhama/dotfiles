@@ -11,10 +11,6 @@ export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/gawk/share/man:$MANPATH
 export MANPATH=/usr/local/opt/erlang/lib/erlang/man:$MANPATH
 
-# Homebrew で pyenv 関連で出る Error 対策
-# brew コマンド実行時のみ PATH を変更する
-alias brew="PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin brew"
-
 # PATH for rbenv
 export PATH=$HOME/.rbenv/shims:$PATH
 # rbenv init 処理が重たいので rehash を適宜手動で行うことにした
