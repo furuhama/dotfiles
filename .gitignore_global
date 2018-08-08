@@ -23,6 +23,8 @@
 
 # ctags
 tags
+tags.lock
+tags.temp
 
 # git worktree submodule directory
 git-worktrees
