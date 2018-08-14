@@ -25,10 +25,6 @@ hook_post_source = '''
 '''
 
 [[plugins]]
-repo = 'uplus/deoplete-solargraph'
-on_ft = 'ruby'
-
-[[plugins]]
 repo = 'tpope/vim-rails'
 on_ft = 'ruby'
 
