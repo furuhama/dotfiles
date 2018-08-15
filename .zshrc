@@ -93,12 +93,8 @@ alias gitch='git fetch'
 # vim
 alias vi='nvim'
 
-# python
-alias jupy='jupyter notebook'
-
 # ruby
 alias be='bundle exec'
-alias rubinius='/usr/local/opt/rubinius/bin/ruby'
 
 # function to echo $PATH
 function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
@@ -124,10 +120,6 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "stedolan/jq", \
-    from:gh-r, \
-    as:command, \
-    rename-to:jq
 zplug "sorin-ionescu/prezto"
 
 # zsh の起動が遅いので未インストールのものをチェックする工程を飛ばしている
@@ -157,9 +149,7 @@ setopt no_flow_control
 # ウザいので off にしている
 unsetopt correct
 
-#cd
-setopt auto_cd
-
+# 移動したディレクトリをスタックに積んでいく
 setopt auto_pushd
 
 setopt prompt_subst
