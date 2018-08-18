@@ -2,30 +2,40 @@
 
 #### git
 
-- .git*
-  - git config files
+- gitconfig
+- gitignore_global
+- gitmessage
+- tigrc
+- .hgrc (mercurial)
 
 #### vim, neovim
 
 - .vimrc
-  - Vim setting
 - nvim/
-  - NeoVim setting
-- fs_menu.vim
-  - NERDTree Menu setting (originally extended by me)
+- .ctags.d/
 
 #### zsh
 
 - .zshrc
-  - zsh setting
 - .zpreztorc
-  - zprezto setting
 - .zprezto/
-  - zprezto setting (edit `minimal` theme at some points)
+
+#### ruby
+
+- .bundle/config
+- .rbenv_init
 
 #### others
 
+- brew_list
 - karabiner/
-  - keyboard mapping for MacBook
 - itermcolors/
-  - colorscheme for iTerm2
+- .pyenv_init
+- .pylintrc
+
+#### archives
+
+- fs_menu.vim
+- autofetch.sh
+- tmux.conf
+- agignore

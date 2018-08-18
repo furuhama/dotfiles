@@ -32,4 +32,3 @@ function fetch_all () {
 
 # main function
 fetch_all
-
