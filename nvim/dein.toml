@@ -53,17 +53,6 @@ hook_add = '''
     let g:NERDDefaultAlign='left'
 '''
 
-# To enable devicons, you should set the terminal font to `Cica` font.
-#
-# [[plugins]]
-# repo = 'ryanoasis/vim-devicons'
-
-# [[plugins]]
-# repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-# hook_add = '''
-#     let g:NERDTreeLimitedSyntax = 1
-# '''
-
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
@@ -235,7 +224,7 @@ hook_add = '''
       return expand('%')
     endfunction
 
-    " not use this function, use LightlineDirname
+    " MEMO: DO NOT use this function, use `LightlineDirname`
     "
     " function! LightlineFilename()
     "   return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
