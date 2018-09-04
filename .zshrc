@@ -1,5 +1,5 @@
 #=======================================================
-# PATH
+# PATH, ENV
 #=======================================================
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export PATH=/usr/local/bin:$PATH
