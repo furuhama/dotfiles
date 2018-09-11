@@ -41,10 +41,7 @@ export NODE_PATH=$(npm root -g):$NODE_PATH
 alias ocaml="rlwrap ocaml"
 
 # Opam(OCaml package manager)
-# eval "$(opam config env)"
-
-# Julia
-# export PATH="/Applications/Julia-0.6.app/Contents/Resources/julia/bin:$PATH"
+eval "$(opam config env)"
 
 # Racer(Rust code completion)
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
