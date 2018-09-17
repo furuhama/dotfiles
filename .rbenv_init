@@ -1,4 +1,4 @@
-export PATH="/Users/furuhama.yusuke/.rbenv/shims:${PATH}"
+export PATH="${HOME}/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
 source '/usr/local/Cellar/rbenv/1.1.1/libexec/../completions/rbenv.zsh'
 # 下記 rehash 処理を毎回行わないようにした
