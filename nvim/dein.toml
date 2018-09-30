@@ -33,12 +33,8 @@ hook_add = '''
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 hook_add = '''
+    " these functions are defined in fzf.vim
     nnoremap <silent><C-l> :Rg<CR>
-    command! -bang -nargs=* Rg
-      \ call fzf#vim#grep(
-      \ 'rg --line-number --no-heading --smart-case '.shellescape(<q-args>), 0,
-      \ fzf#vim#with_preview({'options': '--exact'}, 'right:50%:wrap')
-      \ )
     nnoremap <silent><C-s> :GitFiles<CR>
 '''
 
