@@ -53,7 +53,7 @@ function git_pull() {
     git pull --rebase origin ${branch}
     cd ..
 
-    echo "end"
+    echo ""
     echo "===============================================\n"
   done
 }
@@ -69,7 +69,7 @@ function svn_pull() {
     hg pull --rebase
     cd ..
 
-    echo "end"
+    echo ""
     echo "===============================================\n"
   done
 }
