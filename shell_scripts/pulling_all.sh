@@ -32,10 +32,14 @@
 # )
 
 # get git repositories setting
-source git_repos.sh
+if [ -r ./git_repos.sh ]; then
+  source git_repos.sh
+fi
 
 # get svn repositories setting
-source svn_repos.sh
+if [ -r ./svn_repos.sh ]; then
+  source svn_repos.sh
+fi
 
 # pulling all git repositories
 function git_pull() {
@@ -75,12 +79,16 @@ function svn_pull() {
 }
 
 # main function
+# To be sure that `$git_repos` and `$svn_repos` variables are defined.
 function main() {
-  git_pull
-  svn_pull
+  if [ -n "$git_repos" ]; then
+    git_pull
+  fi
+
+  if [ -n "$svn_repos" ]; then
+    svn_pull
+  fi
 }
 
-# To be sure that `$git_repos` and `$svn_repos` variables are defined.
-if [ -n "$git_repos" ] && [ -n "$svn_repos" ]; then
-  main
-fi
+# Run main function
+main
