@@ -18,7 +18,6 @@ set incsearch
 set hidden
 set list
 set listchars=tab:>\ ,extends:<
-set number
 set showmatch
 set autoindent
 set smartindent
