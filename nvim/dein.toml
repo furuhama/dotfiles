@@ -162,13 +162,13 @@ repo = 'rhysd/vim-color-spring-night'
 
 [[plugins]]
 repo = 'arcticicestudio/nord-vim'
-# hook_add = '''
-#     colorscheme nord
-#     set background=dark
-#     let g:nord_italic=1
-#     let g:nord_italic_comments=1
-#     let g:nord_comment_brightness = 20
-# '''
+hook_add = '''
+    colorscheme nord
+    set background=dark
+    let g:nord_italic=1
+    let g:nord_italic_comments=1
+    let g:nord_comment_brightness = 20
+'''
 
 # light background colorscheme
 
@@ -180,9 +180,9 @@ repo = 'owickstrom/vim-colors-paramount'
 
 [[plugins]]
 repo = 'cormacrelf/vim-colors-github'
-hook_add = '''
-    colorscheme github
-'''
+# hook_add = '''
+#     colorscheme github
+# '''
 
 # ==========================
 # status line
@@ -192,8 +192,8 @@ hook_add = '''
 repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
-            " \ 'colorscheme': 'nord',
-            \ 'colorscheme': 'PaperColor',
+            \ 'colorscheme': 'nord',
+            " \ 'colorscheme': 'PaperColor',
             " \ 'colorscheme': 'wombat',
             \ 'mode_map': {'c': 'NORMAL'},
             \ 'active': {
