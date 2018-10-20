@@ -34,6 +34,8 @@ set history=10000
 set clipboard+=unnamedplus
 " ctags で <C-]> した時に候補が複数ある場合はリストを表示する
 set cscopetag
+" diffs(plit) コマンドを vertical に比較する形にする
+set diffopt=vertical
 
 " ======================
 " keybind settings
