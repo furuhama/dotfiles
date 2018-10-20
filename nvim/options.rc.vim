@@ -54,6 +54,15 @@ noremap <C-e> $
 let mapleader=","
 
 " ======================
+" vim primitive command setting
+" ======================
+set splitright
+if !exists(":DiffOrig")
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+          \ | wincmd p | diffthis
+endif
+
+" ======================
 " file format settings
 " ======================
 autocmd MyAutoCmd FileType c set tabstop=4 shiftwidth=4
