@@ -1,10 +1,10 @@
 if &compatible
-  set nocompatible
+    set nocompatible
 endif
 
 " reset augroup
 augroup MyAutoCmd
-  autocmd!
+    autocmd!
 augroup END
 
 let $CACHE = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_HOME
