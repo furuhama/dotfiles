@@ -34,6 +34,10 @@ set history=10000
 set clipboard+=unnamedplus
 " ctags で <C-]> した時に候補が複数ある場合はリストを表示する
 set cscopetag
+
+" ======================
+" keybind settings
+" ======================
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
 tnoremap <silent> <ESC> <C-\><C-n>
 tnoremap <C-q> <C-\><C-n>:q<CR>
@@ -47,6 +51,9 @@ noremap <C-a> ^
 noremap <C-e> $
 let mapleader=","
 
+" ======================
+" file format settings
+" ======================
 autocmd MyAutoCmd FileType c set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
 autocmd MyAutoCmd FileType haskell set tabstop=4 shiftwidth=4
