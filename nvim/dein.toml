@@ -68,6 +68,9 @@ hook_add = '''
     let g:gitgutter_sign_removed            = '•'
 '''
 
+[[plugins]]
+repo = 'codeindulgence/vim-tig'
+
 # ===============
 # ctags
 # ===============
