@@ -69,7 +69,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'codeindulgence/vim-tig'
+repo = 'furuhama/vim-tig-viewer'
 
 # ===============
 # ctags
