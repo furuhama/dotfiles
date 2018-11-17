@@ -76,6 +76,9 @@ export VISUAL=nvim
 # alias
 #=======================================================
 
+# cc
+alias gcc='gcc-8'
+
 # git
 alias gs='git status'
 alias gc='git commit -m'
