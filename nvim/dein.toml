@@ -188,6 +188,12 @@ repo = 'cormacrelf/vim-colors-github'
 #     colorscheme github
 # '''
 
+[[plugins]]
+repo = 'morhetz/gruvbox'
+# hook_add = '''
+#     colorscheme gruvbox
+# '''
+
 # ==========================
 # status line
 # ==========================
