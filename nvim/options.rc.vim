@@ -5,7 +5,6 @@ set ruler
 set cursorline
 set cmdheight=2
 set laststatus=2
-set title
 set wildmenu wildmode=list:longest,full
 set showcmd
 set showmode
@@ -32,6 +31,7 @@ set notitle
 set noswapfile
 set history=10000
 set clipboard+=unnamedplus
+set number
 " ctags で <C-]> した時に候補が複数ある場合はリストを表示する
 set cscopetag
 " diffs(plit) コマンドを vertical に比較する形にする
