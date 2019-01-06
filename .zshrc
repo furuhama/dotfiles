@@ -38,10 +38,10 @@ export PATH=$PATH:$GOPATH/bin
 export NODE_PATH=$(npm root -g):$NODE_PATH
 
 # OCaml
-alias ocaml="rlwrap ocaml"
+# alias ocaml="rlwrap ocaml"
 
 # Opam(OCaml package manager)
-eval "$(opam config env)"
+# eval "$(opam config env)"
 
 # Racer(Rust code completion)
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
@@ -193,15 +193,6 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
 #大文字小文字を意識しない補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-#=======================================================
-
-# ----------------------
-# Git Function
-# ----------------------
-
-# Git log find by commit message
-function glf() { $git log --all --grep="$1"; }
 
 #=======================================================
 
