@@ -196,11 +196,6 @@ repo = 'cormacrelf/vim-colors-github'
 #     colorscheme github
 # '''
 
-# Change color of inactive views
-
-[[plugins]]
-repo = 'TaDaa/vimade'
-
 # ==========================
 # status line
 # ==========================
