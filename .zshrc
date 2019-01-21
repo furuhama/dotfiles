@@ -4,6 +4,7 @@
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=/usr/local/opt/openssl/bin:$PATH
 
 # MANPATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
