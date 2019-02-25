@@ -182,6 +182,13 @@ hook_add = '''
     let g:gruvbox_sign_column='bg0'
 '''
 
+[[plugins]]
+repo = 'tyrannicaltoucan/vim-quantum'
+# hook_add = '''
+#     colorscheme quantum
+#     set background=dark
+# '''
+
 # light background colorscheme
 
 [[plugins]]
@@ -208,6 +215,7 @@ hook_add = '''
             " \ 'colorscheme': 'PaperColor',
             " \ 'colorscheme': 'wombat',
             " \ 'colorscheme': 'gruvbox',
+            " \ 'colorscheme': 'quantum',
             \ 'mode_map': {'c': 'NORMAL'},
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
