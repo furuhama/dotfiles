@@ -1,6 +1,6 @@
 export PATH="${HOME}/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
-source '/usr/local/Cellar/rbenv/1.1.1/libexec/../completions/rbenv.zsh'
+source '/usr/local/Cellar/rbenv/1.1.2/libexec/../completions/rbenv.zsh'
 # 下記 rehash 処理を毎回行わないようにした
 # そのため、適宜手動で rehash する必要がある
 # command rbenv rehash 2>/dev/null
