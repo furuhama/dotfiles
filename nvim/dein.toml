@@ -71,13 +71,6 @@ hook_add = '''
 [[plugins]]
 repo = 'furuhama/vim-tig-viewer'
 
-# ===============
-# ctags
-# ===============
-
-[[plugins]]
-repo = 'ludovicchabant/vim-gutentags'
-
 # ==========================
 # Language server & lint
 # ==========================
