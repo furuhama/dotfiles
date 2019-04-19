@@ -73,6 +73,9 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Rabbit (Slide tool)
+export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
+
 #=======================================================
 # alias
 #=======================================================
