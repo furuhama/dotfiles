@@ -206,17 +206,18 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
 function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
-# pecoに関する設定(インクリメンタルサーチ用)
-function peco-history-selection() {
-    # BSD 系の `tail` コマンドには -r で逆順に出力するオプションが存在する
-    # 一方で GNU/Linux 系の `tail` コマンドには -r オプションが存在せず、
-    # 代わりに `tac`(= cat の逆さ読み)コマンドが用意されている
-    # 僕のデバイスでは brew で gnu の coreutils を入れているため後者を利用する
-    BUFFER=`history -n 1 | tac | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
-}
 
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
+function history-fzf() {
+  # BSD 系の `tail` コマンドには -r で逆順に出力するオプションが存在する
+  # 一方で GNU/Linux 系の `tail` コマンドには -r オプションが存在せず、
+  # 代わりに `tac`(= cat の逆さ読み)コマンドが用意されている
+  # 僕のデバイスでは brew で gnu の coreutils を入れているため後者を利用する
+  BUFFER=$(history -n 1 | tac | fzf --query "$LBUFFER")
+  CURSOR=$#BUFFER
+
+  zle reset-prompt
+}
+zle -N history-fzf
+bindkey '^r' history-fzf
+
 bindkey -e
