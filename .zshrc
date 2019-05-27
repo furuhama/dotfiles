@@ -101,7 +101,7 @@ alias gitch='git fetch'
 alias vi='nvim'
 
 # ruby
-alias be='bundle exec'
+alias be='DISABLE_SPRING=1 bundle exec'
 
 # function to echo $PATH
 function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
