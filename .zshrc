@@ -81,7 +81,7 @@ export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
 #=======================================================
 
 # cc
-alias gcc='gcc-8'
+alias gcc='gcc-9'
 
 # git
 alias gs='git status'
