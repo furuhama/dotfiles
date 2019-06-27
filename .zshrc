@@ -26,6 +26,8 @@ source ~/.pyenv_init
 
 # direnv
 eval "$(direnv hook zsh)"
+# To surpress direnv STDOUT log, set DIRENV_LOG_FORMAT to NULL
+export DIRENV_LOG_FORMAT=
 
 # nvm(node.js)
 export NVM_DIR=$HOME/.nvm
