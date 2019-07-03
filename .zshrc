@@ -207,6 +207,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # others
 # ----------------------
 
+function killport() {
+  lsof -i4:$1 | tail -1 | awk '{ print $2}' | xargs kill -9
+}
+
 # iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
 function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
 
