@@ -65,9 +65,7 @@ endif
 " ======================
 " file format settings
 " ======================
-autocmd MyAutoCmd FileType c set tabstop=4 shiftwidth=4
-autocmd MyAutoCmd FileType cpp set tabstop=4 shiftwidth=4
-autocmd MyAutoCmd FileType haskell set tabstop=4 shiftwidth=4
-autocmd MyAutoCmd FileType go set tabstop=4 shiftwidth=4 noexpandtab
-autocmd MyAutoCmd FileType markdown set tabstop=2 shiftwidth=2 expandtab
-autocmd MyAutoCmd FileType md set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType c set tabstop=4 shiftwidth=4
+autocmd FileType cpp set tabstop=4 shiftwidth=4
+autocmd FileType haskell set tabstop=4 shiftwidth=4
+autocmd FileType go set tabstop=4 shiftwidth=4 noexpandtab
