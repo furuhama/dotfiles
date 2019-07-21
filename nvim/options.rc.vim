@@ -61,11 +61,3 @@ if !exists(":DiffOrig")
     command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
           \ | wincmd p | diffthis
 endif
-
-" ======================
-" file format settings
-" ======================
-autocmd FileType c set tabstop=4 shiftwidth=4
-autocmd FileType cpp set tabstop=4 shiftwidth=4
-autocmd FileType haskell set tabstop=4 shiftwidth=4
-autocmd FileType go set tabstop=4 shiftwidth=4 noexpandtab
