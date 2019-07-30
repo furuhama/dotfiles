@@ -48,6 +48,7 @@ export NODE_PATH=$(npm root -g):$NODE_PATH
 # eval "$(opam config env)"
 
 # Racer(Rust code completion)
+export PATH=~/.cargo/bin:$PATH
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fpath+=~/.zfunc
 source ~/.cargo/env
