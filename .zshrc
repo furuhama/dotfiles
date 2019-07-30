@@ -144,7 +144,8 @@ zplug "sorin-ionescu/prezto"
 #   fi
 # fi
 
-zplug load --verbose
+# zplug load --verbose
+zplug load
 
 #=======================================================
 # zsh config
