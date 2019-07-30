@@ -32,7 +32,7 @@ export DIRENV_LOG_FORMAT=
 
 # nvm(node.js)
 export NVM_DIR=$HOME/.nvm
-. "/usr/local/opt/nvm/nvm.sh"
+. "$NVM_DIR/nvm.sh"
 
 # gopath
 export GOPATH=$HOME/workspace/go
