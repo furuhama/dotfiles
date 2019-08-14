@@ -37,15 +37,30 @@ eval "$(direnv hook zsh)"
 export DIRENV_LOG_FORMAT=
 
 # nvm(node.js)
-export NVM_DIR=$HOME/.nvm
-. "$NVM_DIR/nvm.sh"
+# nvm command loading takes a lot of time
+# and make lazy load command
+nvm() {
+  echo "Lazy loading nvm..."
+
+  # Remove nvm function
+  unfunction "$0"
+
+  # Set PATH
+  export NVM_DIR=$HOME/.nvm
+
+  # Load nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+  # Set PATH for npm
+  export NODE_PATH=$(npm root -g):$NODE_PATH
+
+  # Call nvm
+  $0 "$@"
+}
 
 # gopath
 export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$GOPATH/bin
-
-# npm
-export NODE_PATH=$(npm root -g):$NODE_PATH
 
 # OCaml
 # alias ocaml="rlwrap ocaml"
