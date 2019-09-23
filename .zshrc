@@ -250,4 +250,12 @@ function history-fzf() {
 zle -N history-fzf
 bindkey '^r' history-fzf
 
+function ghq-fzf() {
+  cd $(ghq list -p | fzf)
+
+  zle reset-prompt
+}
+zle -N ghq-fzf
+bindkey '^h' ghq-fzf
+
 bindkey -e
