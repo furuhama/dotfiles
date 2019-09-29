@@ -58,8 +58,13 @@ nvm() {
   $0 "$@"
 }
 
+# goenv
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$PATH:$GOENV_ROOT/bin
+eval "$(goenv init -)"
 # gopath
 export GOPATH=$HOME/workspace/go
+export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
 # OCaml
