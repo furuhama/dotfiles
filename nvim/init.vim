@@ -9,7 +9,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 
-
 " ======================
 " dein
 " ======================
@@ -43,7 +42,6 @@ endif
 if has('vim_starting') && dein#check_install()
     call dein#install()
 endif
-
 
 " filetypeの検出
 filetype plugin indent on
