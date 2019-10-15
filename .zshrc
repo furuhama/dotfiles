@@ -9,6 +9,7 @@ export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/openssl/bin:$PATH
+export PATH=/usr/local/opt/curl/bin:$PATH
 
 # MANPATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
