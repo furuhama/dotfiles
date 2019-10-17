@@ -36,6 +36,7 @@ set number
 set cscopetag
 " diffs(plit) コマンドを vertical に比較する形にする
 set diffopt=vertical
+set mmp=3000
 
 " ======================
 " keybind settings
