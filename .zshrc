@@ -259,6 +259,9 @@ bindkey '^r' history-fzf
 function ghq-fzf() {
   cd $(ghq list -p | fzf)
 
+  # ここで vcs_info を呼び出さないとディレクトリ移動後の初回のプロンプト表示で
+  # 移動前の vcs の情報が表示されてしまう
+  vcs_info
   zle reset-prompt
 }
 zle -N ghq-fzf
