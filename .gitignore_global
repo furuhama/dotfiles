@@ -25,3 +25,6 @@ tags.temp
 
 # git worktree submodule directory
 git-worktrees
+
+# Ruby 2.7+ creates such file
+.irb_history
