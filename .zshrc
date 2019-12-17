@@ -127,7 +127,7 @@ alias gg='git grep'
 alias gish='git push'
 alias gill='git pull'
 alias gitch='git fetch'
-alias gclean="git branch --merged | rg -v '(master|release|develop)' | xargs -I % git branch -d %"
+alias gclean="git branch --merged | rg -v '^(master|release|develop)$' | xargs -I % git branch -d %"
 
 # vim
 alias vi='nvim'
