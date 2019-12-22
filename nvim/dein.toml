@@ -17,6 +17,9 @@ hook_add = '''
     let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode', '.idea', '\tags.lock$', '\.temp$']
 '''
 
+[[plugins]]
+repo = 'cocopon/vaffle.vim'
+
 # ===============
 # search
 # ===============
