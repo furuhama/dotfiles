@@ -29,11 +29,9 @@ set noerrorbells
 set backspace=indent,eol,start
 set notitle
 set noswapfile
-set history=10000
+set history=1000
 set clipboard+=unnamedplus
 set number
-" ctags で <C-]> した時に候補が複数ある場合はリストを表示する
-set cscopetag
 " diffs(plit) コマンドを vertical に比較する形にする
 set diffopt=vertical
 set mmp=3000
