@@ -8,17 +8,21 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-    let NERDTreeShowHidden=1
-    " nnoremap <silent><C-i> :NERDTreeToggle<CR>
-    nnoremap <silent><C-x> :NERDTreeToggle<CR>
-    let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode', '.idea', '\tags.lock$', '\.temp$']
-'''
+# [[plugins]]
+# repo = 'scrooloose/nerdtree'
+# hook_add = '''
+#     let NERDTreeShowHidden=1
+#     " nnoremap <silent><C-i> :NERDTreeToggle<CR>
+#     nnoremap <silent><C-x> :NERDTreeToggle<CR>
+#     let NERDTreeIgnore=['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode', '.idea', '\tags.lock$', '\.temp$']
+# '''
 
 [[plugins]]
 repo = 'cocopon/vaffle.vim'
+hook_add = '''
+    nnoremap <silent><C-x> :Vaffle<CR>
+    let g:vaffle_show_hidden_files=1
+'''
 
 # ===============
 # search
