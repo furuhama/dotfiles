@@ -35,6 +35,8 @@ set number
 " diffs(plit) コマンドを vertical に比較する形にする
 set diffopt=vertical
 set mmp=3000
+" 折り畳みを無効にする
+set nofoldenable
 
 " ======================
 " keybind settings
