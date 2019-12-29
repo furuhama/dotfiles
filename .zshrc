@@ -216,6 +216,8 @@ setopt inc_append_history
 setopt EXTENDED_HISTORY
 # コマンドラインでもコメントアウトができるように
 setopt interactive_comments
+# zsh デフォルトのコマンド履歴インクリメンタルサーチを無効に
+bindkey -r '^S'
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
 # メモリに保存される履歴の件数
