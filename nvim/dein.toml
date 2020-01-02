@@ -22,6 +22,7 @@ repo = 'cocopon/vaffle.vim'
 hook_add = '''
     nnoremap <silent><C-x> :Vaffle<CR>
     let g:vaffle_show_hidden_files=1
+    let g:vaffle_force_delete=1
 '''
 
 # ===============
