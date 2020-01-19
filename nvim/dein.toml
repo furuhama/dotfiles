@@ -98,29 +98,6 @@ hook_source = '''
     nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 '''
 
-# MEMO: Stop using ale, which is noisy and I rarely write statically-typed languages for a while.
-# [[plugins]]
-# repo = 'w0rp/ale'
-# hook_add = '''
-#     let g:ale_sign_error = 'E'
-#     let g:ale_sign_warning = 'W'
-#     let g:ale_echo_msg_error_str = 'E'
-#     let g:ale_echo_msg_warning_str = 'W'
-#     let g:ale_echo_msg_format = '[%linter%] %s'
-#     let g:ale_lint_on_text_changed = 'never'
-#     let g:ale_lint_on_enter = 0
-#     let g:ale_list_window_size = 4
-#     let g:ale_open_list = 1
-#     let g:ale_keep_list_window_open = 1
-#     let g:ale_python_pylint_options = '--rcfile ~/dotfiles/.pylintrc'
-#     let g:ale_linters = {
-#         \ 'cpp': ['clang', 'cpplint'],
-#         \ 'ruby': ['rubocop'],
-#         \ 'slim': [],
-#         \ }
-#     let g:ale_cpp_cpplint_options = '--linelength=120'
-# '''
-
 # ===============
 # completion
 # ===============
@@ -148,15 +125,6 @@ hook_add = '''
 # ==========================
 
 # dark background colorscheme
-
-[[plugins]]
-repo = 'jonathanfilip/vim-lucius'
-# hook_add = '''
-#     autocmd Colorscheme * highlight LineNr guifg=skyblue
-#     autocmd Colorscheme * highlight Comment guifg=pink
-#     colorscheme lucius
-#     set background=dark
-# '''
 
 [[plugins]]
 repo = 'rhysd/vim-color-spring-night'
@@ -188,20 +156,6 @@ repo = 'tyrannicaltoucan/vim-quantum'
 # hook_add = '''
 #     colorscheme quantum
 #     set background=dark
-# '''
-
-# light background colorscheme
-
-[[plugins]]
-repo = 'owickstrom/vim-colors-paramount'
-# hook_add = '''
-#     colorscheme paramount
-# '''
-
-[[plugins]]
-repo = 'cormacrelf/vim-colors-github'
-# hook_add = '''
-#     colorscheme github
 # '''
 
 # ==========================
