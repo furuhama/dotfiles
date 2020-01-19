@@ -150,13 +150,6 @@ hook_add = '''
     let g:gruvbox_sign_column='bg0'
 '''
 
-[[plugins]]
-repo = 'tyrannicaltoucan/vim-quantum'
-# hook_add = '''
-#     colorscheme quantum
-#     set background=dark
-# '''
-
 # ==========================
 # status line
 # ==========================
