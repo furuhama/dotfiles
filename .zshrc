@@ -62,6 +62,7 @@ nvm() {
 # goenv
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$PATH:$GOENV_ROOT/bin
+export GOENV_DISABLE_GOPATH=1
 eval "$(goenv init -)"
 # gopath
 export GOPATH=$HOME/.go
