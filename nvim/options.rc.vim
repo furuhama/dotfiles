@@ -44,7 +44,7 @@ set nofoldenable
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
 tnoremap <silent> <ESC> <C-\><C-n>
 tnoremap <C-q> <C-\><C-n>:q<CR>
-nnoremap tt :tabe<CR>:terminal<CR>
+nnoremap tt :set nonumber<CR>:tabe<CR>:terminal<CR>
 noremap : ;
 noremap ; :
 noremap tn :<C-u>tabnew<CR>
