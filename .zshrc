@@ -69,12 +69,6 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
-# OCaml
-# alias ocaml="rlwrap ocaml"
-
-# Opam(OCaml package manager)
-# eval "$(opam config env)"
-
 # Racer(Rust code completion)
 export PATH=~/.cargo/bin:$PATH
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
@@ -104,9 +98,6 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 export EDITOR=nvim
 export VISUAL=nvim
-
-# Rabbit (Slide tool)
-export DYLD_LIBRARY_PATH=/usr/local/opt/cairo/lib
 
 #=======================================================
 # alias
