@@ -2,6 +2,7 @@
 # PATH, ENV
 #=======================================================
 export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
+
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/binutils/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -11,7 +12,6 @@ export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=/usr/local/opt/curl/bin:$PATH
 
-# MANPATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
