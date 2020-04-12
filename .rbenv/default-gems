@@ -2,4 +2,3 @@ bundler
 pry
 pry-doc
 benchmark-ips
-gem-default
