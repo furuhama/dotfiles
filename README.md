@@ -6,13 +6,11 @@
 - gitignore_global
 - gitmessage
 - tigrc
-- .hgrc (mercurial)
 
 #### vim, neovim
 
 - .vimrc
-- nvim/
-- .ctags.d/
+- .config/nvim/
 
 #### zsh
 
@@ -24,6 +22,7 @@
 
 - .bundle/config
 - .rbenv_init
+- .rbenv/default-gems
 
 #### others
 
@@ -39,3 +38,5 @@
 - autofetch.sh
 - tmux.conf
 - agignore
+- .hgrc (mercurial)
+- .ctags.d/
