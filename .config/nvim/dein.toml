@@ -16,6 +16,16 @@ hook_add = '''
     let g:vaffle_force_delete=1
 '''
 
+[[plugins]]
+repo = 'tyru/columnskip.vim'
+hook_add = '''
+    nmap <silent> <C-j> <Plug>(columnskip-j)
+    xmap <silent> <C-j> <Plug>(columnskip-j)
+
+    nmap <silent> <C-k> <Plug>(columnskip-k)
+    xmap <silent> <C-k> <Plug>(columnskip-k)
+'''
+
 # ===============
 # search
 # ===============
