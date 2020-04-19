@@ -6,56 +6,20 @@ filetype off
 """"""""""""""""""""""""""""""
 if has('vim_starting')
   " 挙動を vi 互換ではなく、Vim のデフォルト設定にする
-  set nocompatible               " Be iMproved
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set nocompatible " Be iMproved
 endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call plug#begin('~/.vim/plugged')
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'cocopon/vaffle.vim'
+Plug 'itchyny/lightline.vim'
 
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-" Gitをvim上から利用
-NeoBundle 'tpope/vim-fugitive'
-" Git差分表示
-NeoBundle 'airblade/vim-gitgutter'
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-" ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-" 行末の半角スペースを可視化
-NeoBundle 'bronson/vim-trailing-whitespace'
-" syntaxハイライト
-NeoBundle 'KohPoll/vim-less'
-" syntaxを強化
-NeoBundle 'sheerun/vim-polyglot'
-" 補完機能
-NeoBundle 'Shougo/neocomplete.vim'
-" quickrun
-NeoBundle 'thinca/vim-quickrun'
-" ステータスラインをかっこよく
-NeoBundle 'itchyny/lightline.vim'
-" vim-go
-NeoBundle 'fatih/vim-go'
-" rust
-NeoBundle 'rust-lang/rust.vim'
-" rust racer
-NeoBundle 'racer-rust/vim-racer'
-
-call neobundle#end()
+call plug#end()
 
 " Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 """"""""""""""""""""""""""""""
 
 
@@ -130,18 +94,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 
 """"""""""""""""""""""""""""""
-"### for NERDTree
-""""""""""""""""""""""""""""""
-let NERDTreeShowHidden=1
-
-" NERDTreeをCtrl+eで起動
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-" いくつかのファイルを無視
-let NERDTreeIgnore = ['\.pyc$', '\.swp$', '\.DS_Store$', '\.git$', '__pycache__', '.vscode']
-""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
 "### for lightline
 """"""""""""""""""""""""""""""
 let g:lightline = {
@@ -207,29 +159,6 @@ endfunction
 
 
 """"""""""""""""""""""""""""""
-"### for vim-go
-""""""""""""""""""""""""""""""
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
-"### for rust
-""""""""""""""""""""""""""""""
-let g:rustfmt_autosave = 1
-let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-let g:syntastic_rust_checkers = ['cargo']
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
-""""""""""""""""""""""""""""""
-
-
-
-""""""""""""""""""""""""""""""
 " 挿入モード時、ステータスラインの色を変更
 """"""""""""""""""""""""""""""
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
@@ -261,82 +190,6 @@ function! s:GetHighlight(hi)
   let hl = substitute(hl, 'xxx', '', '')
   return hl
 endfunction
-""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
-" NeoComplete の補完を有効にする
-""""""""""""""""""""""""""""""
-"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Close popup by <Space>.
-" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 """"""""""""""""""""""""""""""
 
 
