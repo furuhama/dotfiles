@@ -15,6 +15,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'cocopon/vaffle.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'tyru/columnskip.vim'
 
 call plug#end()
 
@@ -44,9 +45,8 @@ set showcmd
 set showmode
 " 小文字のみで検索したときに大文字小文字を無視する
 set smartcase
-" 検索結果のハイライトをESC連打で消す
+" 検索結果のハイライト
 set hlsearch
-noremap <Esc><Esc> :nohlsearch<CR><Esc>
 " 構文毎に文字色を変化させる
 syntax on
 set t_Co=256
@@ -88,9 +88,20 @@ set backspace=indent,eol,start
 set notitle
 " 履歴の表示件数を増やす
 set history=10000
+" カーソル行のハイライト
+set cursorline
+" yank と clipboard の共有
+set clipboard+=unnamed
+""""""""""""""""""""""""""""""
 
-" grep検索の実行後にQuickFix Listを表示する
-autocmd QuickFixCmdPost *grep* cwindow
+
+""""""""""""""""""""""""""""""
+" Key bind
+""""""""""""""""""""""""""""""
+noremap <C-a> ^
+noremap <C-e> $
+noremap <Esc><Esc> :nohlsearch<CR><Esc>
+""""""""""""""""""""""""""""""
 
 
 """"""""""""""""""""""""""""""
@@ -157,12 +168,24 @@ endfunction
 
 """"""""""""""""""""""""""""""
 
+
 """"""""""""""""""""""""""""""
 " Vaffle
 """"""""""""""""""""""""""""""
 nnoremap <silent><C-x> :Vaffle<CR>
 let g:vaffle_show_hidden_files=1
 let g:vaffle_force_delete=1
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+" columnskip
+""""""""""""""""""""""""""""""
+nmap <silent> <C-j> <Plug>(columnskip-j)
+xmap <silent> <C-j> <Plug>(columnskip-j)
+
+nmap <silent> <C-k> <Plug>(columnskip-k)
+xmap <silent> <C-k> <Plug>(columnskip-k)
 """"""""""""""""""""""""""""""
 
 
