@@ -16,6 +16,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'cocopon/vaffle.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tyru/columnskip.vim'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -186,6 +187,14 @@ xmap <silent> <C-j> <Plug>(columnskip-j)
 
 nmap <silent> <C-k> <Plug>(columnskip-k)
 xmap <silent> <C-k> <Plug>(columnskip-k)
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+" NERD Commenter
+""""""""""""""""""""""""""""""
+let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign='left'
 """"""""""""""""""""""""""""""
 
 
