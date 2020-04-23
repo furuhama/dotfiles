@@ -69,11 +69,13 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
-# Racer(Rust code completion)
-export PATH=~/.cargo/bin:$PATH
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-fpath+=~/.zfunc
-source ~/.cargo/env
+# Rust
+if [ -d "$HOME/.cargo" ]; then
+    export PATH=~/.cargo/bin:$PATH
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+    fpath+=~/.zfunc
+    source ~/.cargo/env
+fi
 
 # Haskell
 export PATH=$HOME/.local/bin:$PATH
