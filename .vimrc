@@ -13,10 +13,26 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'sheerun/vim-polyglot'
 Plug 'bronson/vim-trailing-whitespace'
+
+" filer
 Plug 'cocopon/vaffle.vim'
+
+" status line
 Plug 'itchyny/lightline.vim'
+
+" key binds
 Plug 'tyru/columnskip.vim'
 Plug 'scrooloose/nerdcommenter'
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" LSP
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 
@@ -102,6 +118,10 @@ set clipboard+=unnamed
 noremap <C-a> ^
 noremap <C-e> $
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" fzf
+nnoremap <silent><C-l> :Rg<CR>
+nnoremap <silent><C-s> :GitFiles<CR>
 """"""""""""""""""""""""""""""
 
 
