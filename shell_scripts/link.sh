@@ -29,6 +29,7 @@ set_link_with_dir() {
 }
 
 set_link_with_dir .bundle config
+set_link_with_dir .cargo config
 set_link_with_dir .rbenv default-gems
 set_link_with_dir .zprezto/modules/git alias.zsh
 set_link_with_dir .zprezto/modules/prompt/functions prompt_minimal_setup
