@@ -50,7 +50,7 @@ nvm() {
   unfunction "$0"
 
   # Set PATH
-  export NVM_DIR=$HOME/.nvm
+  export NVM_DIR=$HOME/.config/nvm
 
   # Load nvm
   [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
