@@ -22,6 +22,9 @@ export MANPATH=/usr/local/opt/erlang/lib/erlang/man:$MANPATH
 
 # PATH for rbenv
 export PATH=$HOME/.rbenv/shims:$PATH
+# rbenv が homebrew で入れた openssl にデフォルトで依存しなくなったため
+# homebrew 経由の openssl を見るように環境変数にて指定
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # rbenv init 処理が重たいので rehash を適宜手動で行うことにした
 # eval "$(rbenv init -)"
 source ~/.rbenv_init
