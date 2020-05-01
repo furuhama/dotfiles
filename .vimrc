@@ -109,6 +109,8 @@ set history=10000
 set cursorline
 " yank と clipboard の共有
 set clipboard+=unnamed
+" ファイルの自動再読み込み
+set autoread
 """"""""""""""""""""""""""""""
 
 
