@@ -37,6 +37,8 @@ set diffopt=vertical
 set mmp=3000
 " 折り畳みを無効にする
 set nofoldenable
+" ファイルを自動で再読み込みする
+set autoread
 
 " ======================
 " keybind settings
