@@ -182,6 +182,7 @@ zplug load
 # prompt
 #=======================================================
 
+set -m
 setopt LOCAL_OPTIONS
 unsetopt XTRACE KSH_ARRAYS
 
