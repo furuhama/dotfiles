@@ -119,6 +119,11 @@ export VISUAL=nvim
 # alias
 #=======================================================
 
+# utils
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -lh'
+alias la='ll -A'
+
 # cc
 alias gcc='gcc-9'
 
