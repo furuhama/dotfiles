@@ -61,7 +61,7 @@ rustc_version = "1.42.0"
 
 # source code template
 template = """
-#[allow(unused_imports)]
+#[allow(unused_imports, unused_macros)]
 use proconio::{
     fastout, input,
     marker::{Bytes, Chars, Usize1},
