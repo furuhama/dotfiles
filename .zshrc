@@ -182,10 +182,6 @@ zplug load
 # prompt
 #=======================================================
 
-set -m
-setopt LOCAL_OPTIONS
-unsetopt XTRACE KSH_ARRAYS
-
 # Load required functions.
 autoload -Uz add-zsh-hook
 autoload -Uz vcs_info
@@ -227,18 +223,14 @@ RPROMPT=''
 # zsh config
 #=======================================================
 
+# フロー制御を使わない
 setopt no_flow_control
-
-# タイポしているコマンドを指摘したい場合以下を有効に
-# setopt correct
-# ウザいので off にしている
+# タイポしているコマンドを指摘したい場合以下を有効に(ウザいので off にしている)
 unsetopt correct
-
 # 移動したディレクトリをスタックに積んでいく
 setopt auto_pushd
-
+# prompt 表示のたびに変数展開
 setopt prompt_subst
-
 # historyの共有
 setopt share_history
 # 重複を記録しない
@@ -261,6 +253,8 @@ setopt inc_append_history
 setopt EXTENDED_HISTORY
 # コマンドラインでもコメントアウトができるように
 setopt interactive_comments
+# ジョブの制御
+setopt monitor
 # zsh デフォルトのコマンド履歴インクリメンタルサーチを無効に
 bindkey -r '^S'
 # 履歴ファイルの保存先
