@@ -184,7 +184,7 @@ zplug load
 #=======================================================
 autoload colors && colors
 autoload -Uz add-zsh-hook
-autoload -Uz compinit && compinit -C
+# autoload -Uz compinit && compinit -C
 
 setopt no_flow_control
 
