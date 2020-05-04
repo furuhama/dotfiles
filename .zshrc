@@ -82,7 +82,6 @@ export PATH=$PATH:$GOENV_ROOT/bin
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
-
 # Rust
 if [ -d "$HOME/.cargo" ]; then
     export PATH=~/.cargo/bin:$PATH
@@ -90,30 +89,34 @@ if [ -d "$HOME/.cargo" ]; then
     fpath+=~/.zfunc
     source ~/.cargo/env
 fi
-
 # Haskell
 export PATH=$HOME/.local/bin:$PATH
-
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
-
 # PostgreSQL
 export PGDATA=/usr/local/var/postgres
-
 # Set library path
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
-
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
-
 # for mysql(5.7)
 export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
-
 # java
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
+# デフォルトのエディタ設定
 export EDITOR=nvim
 export VISUAL=nvim
+# 履歴ファイルの保存先
+export HISTFILE=${HOME}/.zsh_history
+# メモリに保存される履歴の件数
+export HISTSIZE=1000000
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=1000000
+#color
+export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
+export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
+export LESS='-g -i -M -R -S -W -z-4 -x4'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
 #=======================================================
 # alias
@@ -123,10 +126,8 @@ export VISUAL=nvim
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lh'
 alias la='ll -A'
-
 # cc
 alias gcc='gcc-9'
-
 # git
 alias gs='git status'
 alias gc='git commit -m'
@@ -141,15 +142,10 @@ alias gish='git push'
 alias gill='git pull'
 alias gitch='git fetch'
 alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(master|release|develop)$' | xargs -I % git branch -d %"
-
 # vim
 alias vi='nvim'
-
 # ruby
 alias be='DISABLE_SPRING=1 bundle exec'
-
-# function to echo $PATH
-function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
 
 #=======================================================
 # zplug
@@ -166,8 +162,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # zsh の起動が遅いので未インストールのものをチェックする工程を飛ばしている
 # plugin をいじった場合にはここのコメントアウトを外すこと
-#
-# Install plugins if there are plugins that have not been installed
 # if ! zplug check --verbose; then
 #   printf "Install? [y/N]: "
 #   if read -q; then
@@ -175,7 +169,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 #   fi
 # fi
 
-# zplug load --verbose
 zplug load
 
 #=======================================================
@@ -188,7 +181,6 @@ autoload -Uz vcs_info
 autoload colors && colors
 
 # Add hook for calling vcs_info before each command.
-# add-zsh-hook precmd prompt_minimal_precmd
 add-zsh-hook precmd vcs_info
 
 # Set vcs_info parameters.
@@ -200,23 +192,18 @@ zstyle ':vcs_info:*' formats ' - [%b%c%u]'
 zstyle ':vcs_info:*' actionformats " - [%b%c%u|%F{cyan}%a%f]"
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b|%F{cyan}%r%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git_status
-
-# Define prompts.
-# 下記部分はバックグラウンドプロセスの数を表示している
-# %F{menta}%(1j. %j.)%f
-
-# 顔文字を表示したい
-# KAOMOJI="( '-')"
-# 顔文字ver
-# PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJI} '
+zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
+#大文字小文字を意識しない補完
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # いろんな顔文字をランダムで表示したい
+# (下記部分はバックグラウンドプロセスの数を表示している)
+# %F{menta}%(1j. %j.)%f
 KAOMOJIS=("( '-')" "( T-T)" "( .-.)" "( 0_0)" "( >_<)" "( *-*)" "( o_o)" "(′•_•)" "( 'm')")
 KAOMOJI_LENGTH="${#KAOMOJIS[@]}"
 KAOMOJI="${KAOMOJIS[${$((RANDOM % KAOMOJI_LENGTH + 1))}]}"
 # いろんな顔文字ver
 PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJI} '
-
 RPROMPT=''
 
 #=======================================================
@@ -255,32 +242,17 @@ setopt EXTENDED_HISTORY
 setopt interactive_comments
 # ジョブの制御
 setopt monitor
-# zsh デフォルトのコマンド履歴インクリメンタルサーチを無効に
-bindkey -r '^S'
-# 履歴ファイルの保存先
-export HISTFILE=${HOME}/.zsh_history
-# メモリに保存される履歴の件数
-export HISTSIZE=1000000
-# 履歴ファイルに保存される履歴の件数
-export SAVEHIST=1000000
-#color
-export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
-export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
-export LESS='-g -i -M -R -S -W -z-4 -x4'
-export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
-zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
-#大文字小文字を意識しない補完
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 #=======================================================
-
-# ----------------------
 # others
-# ----------------------
+#=======================================================
 
 function killport() {
   lsof -i4:$1 | tail -1 | awk '{ print $2}' | xargs kill -9
 }
+
+# function to echo $PATH
+function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
 
 # iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
 function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
@@ -295,6 +267,9 @@ function history-fzf() {
 
   zle reset-prompt
 }
+# zsh デフォルトのコマンド履歴インクリメンタルサーチを無効に
+bindkey -r '^S'
+# その上で history-fzf を登録
 zle -N history-fzf
 bindkey '^r' history-fzf
 
@@ -309,4 +284,5 @@ function ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^h' ghq-fzf
 
+# emacs-like keybind
 bindkey -e
