@@ -62,7 +62,14 @@ rustc_version = "1.42.0"
 # source code template
 template = """
 #[allow(unused_imports)]
-use proconio::{input,marker::Chars};
+use proconio::{
+    fastout, input,
+    marker::{Bytes, Chars, Usize1},
+};
+
+macro_rules! echo {
+    ($($e:expr),+) => ( { $(println!("{}", $e))+ } );
+}
 
 fn main() {
     unimplemented!();
