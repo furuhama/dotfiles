@@ -14,6 +14,7 @@ set_link .gitconfig
 set_link .gitignore_global
 set_link .gitmessage
 set_link .hgrc
+set_link .hushlogin
 set_link .pryrc
 set_link .pyenv_init
 set_link .pylintrc
