@@ -15,22 +15,17 @@
 #### zsh
 
 - .zshrc
-- .zpreztorc
-- .zprezto/
 
 #### ruby
 
 - .bundle/config
 - .rbenv_init
-- .rbenv/default-gems
 
 #### others
 
-- brew_list
 - karabiner/
 - itermcolors/
 - .pyenv_init
-- .pylintrc
 
 #### archives
 
@@ -40,3 +35,8 @@
 - agignore
 - .hgrc (mercurial)
 - .ctags.d/
+- .zpreztorc
+- .zprezto/
+- .rbenv/default-gems
+- brew_list
+- .pylintrc
