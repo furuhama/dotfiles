@@ -64,7 +64,7 @@ template = """
 #[allow(unused_imports, unused_macros)]
 use proconio::{
     fastout, input,
-    marker::{Bytes, Chars, Usize1},
+    marker::{Bytes, Chars, Isize1, Usize1},
 };
 
 macro_rules! echo {
