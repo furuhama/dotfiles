@@ -20,7 +20,6 @@ set_link .pylintrc
 set_link .rbenv_init
 set_link .tigrc
 set_link .vimrc
-set_link .zpreztorc
 set_link .zshrc
 
 set_link_with_dir() {
@@ -31,10 +30,6 @@ set_link_with_dir() {
 set_link_with_dir .bundle config
 set_link_with_dir .cargo config
 set_link_with_dir .rbenv default-gems
-set_link_with_dir .zprezto/modules/git alias.zsh
-set_link_with_dir .zprezto/modules/prompt/functions prompt_minimal_setup
-set_link_with_dir .zprezto/modules/utility init.zsh
-set_link_with_dir .zprezto/modules/utility init.zsh
 set_link_with_dir Library/Preferences cargo-atcoder.toml
 
 # nvim is a directory
