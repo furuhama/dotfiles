@@ -63,10 +63,18 @@ nvm() {
 }
 
 # goenv
+goenv() {
+  echo "Lazy loading goenv..."
+
+  unfunction "$0"
+
+  eval "$(goenv init -)"
+
+  $0 "$@"
+}
 export GOENV_ROOT=$HOME/.goenv
-export PATH=$PATH:$GOENV_ROOT/bin
 export GOENV_DISABLE_GOPATH=1
-eval "$(goenv init -)"
+export PATH=$PATH:$GOENV_ROOT/bin
 # gopath
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
