@@ -35,6 +35,7 @@ set_link_with_dir .zprezto/modules/git alias.zsh
 set_link_with_dir .zprezto/modules/prompt/functions prompt_minimal_setup
 set_link_with_dir .zprezto/modules/utility init.zsh
 set_link_with_dir .zprezto/modules/utility init.zsh
+set_link_with_dir Library/Preferences cargo-atcoder.toml
 
 # nvim is a directory
 mkdir -p .config
