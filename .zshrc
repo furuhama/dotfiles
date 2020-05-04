@@ -159,19 +159,10 @@ function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# Source Prezto.
-# if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-#   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-# fi
-#
-# この処理もファイルの確認を行わずに実行することにした
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "sorin-ionescu/prezto"
 
 # zsh の起動が遅いので未インストールのものをチェックする工程を飛ばしている
 # plugin をいじった場合にはここのコメントアウトを外すこと
@@ -188,11 +179,52 @@ zplug "sorin-ionescu/prezto"
 zplug load
 
 #=======================================================
+# prompt
+#=======================================================
+
+setopt LOCAL_OPTIONS
+unsetopt XTRACE KSH_ARRAYS
+
+# Load required functions.
+autoload -Uz add-zsh-hook
+autoload -Uz vcs_info
+autoload colors && colors
+
+# Add hook for calling vcs_info before each command.
+# add-zsh-hook precmd prompt_minimal_precmd
+add-zsh-hook precmd vcs_info
+
+# Set vcs_info parameters.
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr '%F{green}S%f'
+zstyle ':vcs_info:*' unstagedstr '%F{yellow}U%f'
+zstyle ':vcs_info:*' formats ' - [%b%c%u]'
+zstyle ':vcs_info:*' actionformats " - [%b%c%u|%F{cyan}%a%f]"
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b|%F{cyan}%r%f'
+zstyle ':vcs_info:git*+set-message:*' hooks git_status
+
+# Define prompts.
+# 下記部分はバックグラウンドプロセスの数を表示している
+# %F{menta}%(1j. %j.)%f
+
+# 顔文字を表示したい
+# KAOMOJI="( '-')"
+# 顔文字ver
+# PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJI} '
+
+# いろんな顔文字をランダムで表示したい
+KAOMOJIS=("( '-')" "( T-T)" "( .-.)" "( 0_0)" "( >_<)" "( *-*)" "( o_o)" "(′•_•)" "( 'm')")
+KAOMOJI_LENGTH="${#KAOMOJIS[@]}"
+KAOMOJI="${KAOMOJIS[${$((RANDOM % KAOMOJI_LENGTH + 1))}]}"
+# いろんな顔文字ver
+PROMPT='%2~${vcs_info_msg_0_}%F{magenta}%(1j. %j.)%f ${KAOMOJI} '
+
+RPROMPT=''
+
+#=======================================================
 # zsh config
 #=======================================================
-autoload colors && colors
-autoload -Uz add-zsh-hook
-# autoload -Uz compinit && compinit -C
 
 setopt no_flow_control
 
