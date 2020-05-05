@@ -17,6 +17,9 @@ Plug 'bronson/vim-trailing-whitespace'
 " filer
 Plug 'cocopon/vaffle.vim'
 
+" colorscheme
+Plug 'morhetz/gruvbox'
+
 " status line
 Plug 'itchyny/lightline.vim'
 
@@ -65,9 +68,6 @@ set showmode
 set smartcase
 " 検索結果のハイライト
 set hlsearch
-" 構文毎に文字色を変化させる
-syntax on
-set t_Co=256
 " タブ入力を複数の空白入力に置き換える
 set expandtab
 " 検索ワードの最初の文字を入力した時点で検索を開始する
@@ -94,8 +94,6 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
-" 行番号の色
-highlight LineNr ctermfg=red
 " turn off visual bell(空文字代入)
 set visualbell t_vb=
 " error bellをオフに
@@ -112,6 +110,11 @@ set cursorline
 set clipboard+=unnamed
 " ファイルの自動再読み込み
 set autoread
+" colorscheme
+set t_Co=256
+set background=dark
+let g:gruvbox_sign_column='bg0'
+colorscheme gruvbox
 """"""""""""""""""""""""""""""
 
 
