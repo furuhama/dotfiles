@@ -110,6 +110,8 @@ set cursorline
 set clipboard+=unnamed
 " ファイルの自動再読み込み
 set autoread
+" swp ファイルを作らない
+set noswapfile
 " colorscheme
 set t_Co=256
 set background=dark
@@ -192,7 +194,6 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
-
 """"""""""""""""""""""""""""""
 
 
