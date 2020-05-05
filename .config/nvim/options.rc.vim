@@ -47,8 +47,6 @@ noremap <Esc><Esc> :nohlsearch<CR><Esc>
 tnoremap <silent> <ESC> <C-\><C-n>
 tnoremap <C-q> <C-\><C-n>:q<CR>
 nnoremap tt :tabe<CR>:terminal<CR>:setlocal nonumber<CR>
-noremap : ;
-noremap ; :
 noremap tn :<C-u>tabnew<CR>
 noremap <C-n> gt
 noremap <C-p> gT
