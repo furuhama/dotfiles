@@ -61,12 +61,14 @@ rustc_version = "1.42.0"
 
 # source code template
 template = """
-#[allow(unused_imports, unused_macros)]
+#[allow(unused_imports)]
 use proconio::{
     fastout, input,
     marker::{Bytes, Chars, Isize1, Usize1},
 };
 
+#[allow(unused_macros)]
+use proconio::{
 macro_rules! echo {
     ($($e:expr),+) => ( { $(println!("{}", $e))+ } );
 }
