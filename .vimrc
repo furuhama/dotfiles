@@ -34,6 +34,9 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 
+" git
+Plug 'lambdalisue/gina.vim'
+
 call plug#end()
 
 " Required:
@@ -134,12 +137,12 @@ let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+        \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'filename' ] ]
         \ },
         \ 'component_function': {
         \   'modified': 'LightlineModified',
         \   'readonly': 'LightlineReadonly',
-        \   'fugitive': 'LightlineFugitive',
+        \   'gitbranch': 'gina#component#repo#branch',
         \   'filename': 'LightlineFilename',
         \   'fileformat': 'LightlineFileformat',
         \   'filetype': 'LightlineFiletype',
