@@ -45,7 +45,7 @@ filetype plugin indent on
 
 
 """"""""""""""""""""""""""""""
-"### 表示設定 ###
+" 表示設定
 """"""""""""""""""""""""""""""
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
@@ -129,7 +129,7 @@ nnoremap <silent><C-s> :GitFiles<CR>
 
 
 """"""""""""""""""""""""""""""
-"### for lightline
+" lightline
 """"""""""""""""""""""""""""""
 let g:lightline = {
   \   'colorscheme': 'wombat',
