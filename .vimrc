@@ -134,22 +134,22 @@ nnoremap <silent><C-s> :GitFiles<CR>
 "### for lightline
 """"""""""""""""""""""""""""""
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'LightlineModified',
-        \   'readonly': 'LightlineReadonly',
-        \   'gitbranch': 'gina#component#repo#branch',
-        \   'filename': 'LightlineFilename',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filetype': 'LightlineFiletype',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'mode': 'LightlineMode'
-        \ }
-        \ }
+  \   'colorscheme': 'wombat',
+  \   'mode_map': {'c': 'NORMAL'},
+  \   'active': {
+  \     'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'filename' ] ]
+  \   },
+  \   'component_function': {
+  \     'modified': 'LightlineModified',
+  \     'readonly': 'LightlineReadonly',
+  \     'gitbranch': 'gina#component#repo#branch',
+  \     'filename': 'LightlineFilename',
+  \     'fileformat': 'LightlineFileformat',
+  \     'filetype': 'LightlineFiletype',
+  \     'fileencoding': 'LightlineFileencoding',
+  \     'mode': 'LightlineMode'
+  \   }
+  \ }
 
 function! LightlineModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
