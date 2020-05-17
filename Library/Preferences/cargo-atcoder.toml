@@ -68,7 +68,6 @@ use proconio::{
 };
 
 #[allow(unused_macros)]
-use proconio::{
 macro_rules! echo {
     ($($e:expr),+) => ( { $(println!("{}", $e))+ } );
 }
