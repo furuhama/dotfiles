@@ -137,6 +137,18 @@ nnoremap <silent><C-l> :Rg<CR>
 nnoremap <silent><C-s> :GitFiles<CR>
 """"""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""
+" vim-lsp
+""""""""""""""""""""""""""""""
+if executable('rust-analyzer')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rust-analyzer',
+        \ 'cmd': {server_info->['rust-analyzer']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " lightline
