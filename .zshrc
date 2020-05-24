@@ -104,8 +104,8 @@ export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
 # java
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # デフォルトのエディタ設定
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=vim
+export VISUAL=vim
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
 # メモリに保存される履歴の件数
@@ -143,7 +143,7 @@ alias gill='git pull'
 alias gitch='git fetch'
 alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(master|release|develop)$' | xargs -I % git branch -d %"
 # vim
-alias vi='nvim'
+alias vi='vim'
 # ruby
 alias be='DISABLE_SPRING=1 bundle exec'
 
