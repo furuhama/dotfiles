@@ -135,6 +135,9 @@ tnoremap <silent> <ESC> <C-\><C-n>
 " fzf
 nnoremap <silent><C-l> :Rg<CR>
 nnoremap <silent><C-s> :GitFiles<CR>
+
+" vim-lsp
+nnoremap gd :LspDefinition<CR>
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -148,6 +151,15 @@ if executable('rust-analyzer')
         \ 'whitelist': ['rust'],
         \ })
 endif
+let g:lsp_signs_error = {'text': '!'}
+let g:lsp_signs_warning = {'text': '>'}
+let g:lsp_signs_hint = {'text': '?'}
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_popup_delay = 200
+let g:lsp_text_edit_enabled = 1
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
