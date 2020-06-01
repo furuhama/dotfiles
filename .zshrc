@@ -210,6 +210,9 @@ RPROMPT=''
 # zsh config
 #=======================================================
 
+# Ctrl-S を vim で有効にしたい
+stty start undef
+stty stop undef
 # フロー制御を使わない
 setopt no_flow_control
 # タイポしているコマンドを指摘したい場合以下を有効に(ウザいので off にしている)
