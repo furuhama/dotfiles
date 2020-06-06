@@ -33,9 +33,10 @@ Plug 'junegunn/fzf.vim'
 
 " LSP
 Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
 
 " git
 Plug 'lambdalisue/gina.vim'
@@ -140,17 +141,10 @@ nnoremap <silent><C-s> :GitFiles<CR>
 nnoremap gd :LspDefinition<CR>
 """"""""""""""""""""""""""""""
 
+
 """"""""""""""""""""""""""""""
 " vim-lsp
 """"""""""""""""""""""""""""""
-if executable('rust-analyzer')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rust-analyzer',
-        \ 'cmd': {server_info->['rust-analyzer']},
-        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
 let g:lsp_signs_error = {'text': '!'}
 let g:lsp_signs_warning = {'text': '>'}
 let g:lsp_signs_hint = {'text': '?'}
@@ -158,9 +152,11 @@ let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_popup_delay = 200
+set completeopt=menuone,noinsert,noselect,preview
+let g:asyncomplete_popup_delay = 100
 let g:lsp_text_edit_enabled = 1
 """"""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""
 " lightline
