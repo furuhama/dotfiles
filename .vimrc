@@ -159,6 +159,9 @@ set completeopt=menuone,noinsert,noselect,preview
 let g:asyncomplete_popup_delay = 100
 let g:lsp_text_edit_enabled = 1
 
+" ファイル保存時に format を実行する
+autocmd BufWritePre * LspDocumentFormatSync
+
 nnoremap gd :LspDefinition<CR>
 """"""""""""""""""""""""""""""
 
