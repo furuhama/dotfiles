@@ -132,13 +132,14 @@ noremap tn :<C-u>tabnew<CR>
 noremap <C-n> gt
 noremap <C-p> gT
 tnoremap <silent> <ESC> <C-\><C-n>
+""""""""""""""""""""""""""""""
 
+
+""""""""""""""""""""""""""""""
 " fzf
+""""""""""""""""""""""""""""""
 nnoremap <silent><C-l> :Rg<CR>
 nnoremap <silent><C-s> :GitFiles<CR>
-
-" vim-lsp
-nnoremap gd :LspDefinition<CR>
 """"""""""""""""""""""""""""""
 
 
@@ -155,6 +156,8 @@ let g:asyncomplete_auto_completeopt = 0
 set completeopt=menuone,noinsert,noselect,preview
 let g:asyncomplete_popup_delay = 100
 let g:lsp_text_edit_enabled = 1
+
+nnoremap gd :LspDefinition<CR>
 """"""""""""""""""""""""""""""
 
 
