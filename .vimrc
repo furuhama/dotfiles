@@ -113,6 +113,8 @@ set clipboard+=unnamed
 set autoread
 " swp ファイルを作らない
 set noswapfile
+" current directory を切り替える
+set autochdir
 " colorscheme
 set t_Co=256
 set background=dark
