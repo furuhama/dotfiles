@@ -233,7 +233,7 @@ endfunction
 """"""""""""""""""""""""""""""
 " Vaffle
 """"""""""""""""""""""""""""""
-nnoremap <silent><C-x> :Vaffle<CR>
+nnoremap <silent><C-x> :Vaffle pwd<CR>
 let g:vaffle_show_hidden_files=1
 let g:vaffle_force_delete=1
 """"""""""""""""""""""""""""""
