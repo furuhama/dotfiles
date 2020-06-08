@@ -111,6 +111,11 @@ set cursorline
 set clipboard+=unnamed
 " ファイルの自動再読み込み
 set autoread
+" ウィンドウ移動の度に自動読み込みのチェックを行う
+augroup vimrc-checktime
+  autocmd!
+  autocmd WinEnter * checktime
+augroup END
 " swp ファイルを作らない
 set noswapfile
 " current directory を切り替える
