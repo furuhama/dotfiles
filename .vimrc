@@ -41,6 +41,9 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " git
 Plug 'lambdalisue/gina.vim'
 
+" tig
+Plug 'furuhama/vim-tig-viewer'
+
 call plug#end()
 
 " Required:
