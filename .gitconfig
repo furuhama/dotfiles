@@ -7,7 +7,7 @@
 	name = furuhama
 	email = furuhama@users.noreply.github.com
 [core]
-	editor = nvim -c \"set fenc=utf-8\"
+	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore_global
 	pager = less -R -F -X
 	quotepath = false
