@@ -270,7 +270,7 @@ let g:NERDDefaultAlign='left'
 " Gina vim
 """"""""""""""""""""""""""""""
 " alias
-command Gblame Gina blame
+command Blame Gina blame
 """"""""""""""""""""""""""""""
 
 
