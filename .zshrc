@@ -146,6 +146,8 @@ alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(
 alias vi='vim'
 # ruby
 alias be='DISABLE_SPRING=1 bundle exec'
+# kubernetes
+alias k='kubectl'
 
 #=======================================================
 # zplug
