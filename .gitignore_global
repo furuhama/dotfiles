@@ -28,3 +28,6 @@ git-worktrees
 
 # Ruby 2.7+ creates such file
 .irb_history
+
+# for ripgrep
+.rgignore
