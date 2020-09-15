@@ -289,5 +289,10 @@ function ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^h' ghq-fzf
 
+# コマンドラインの編集を EDITOR 変数に設定してあるエディタから行えるように
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x' edit-command-line
+
 # emacs-like keybind
 bindkey -e
