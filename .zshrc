@@ -139,6 +139,7 @@ alias gb='git branch'
 alias gch='git checkout'
 alias gg='git grep'
 alias gish='git push'
+alias fgish='git push --force-with-lease'
 alias gill='git pull'
 alias gitch='git fetch'
 alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(master|release|develop)$' | xargs -I % git branch -d %"
