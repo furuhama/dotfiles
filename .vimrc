@@ -123,6 +123,8 @@ augroup END
 set noswapfile
 " current directory を切り替える
 set autochdir
+" <leader> を , に
+let mapleader = ','
 " colorscheme
 set t_Co=256
 set background=dark
