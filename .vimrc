@@ -152,6 +152,7 @@ tnoremap <silent> <ESC> <C-\><C-n>
 """"""""""""""""""""""""""""""
 nnoremap <silent><C-l> :Rg<CR>
 nnoremap <silent><C-s> :GitFiles<CR>
+let g:fzf_layout = { 'down': '~40%' }
 """"""""""""""""""""""""""""""
 
 
@@ -273,13 +274,6 @@ let g:NERDDefaultAlign='left'
 """"""""""""""""""""""""""""""
 " alias
 command Blame Gina blame
-""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
-" fzf.vim
-""""""""""""""""""""""""""""""
-let g:fzf_layout = { 'down': '~40%' }
 """"""""""""""""""""""""""""""
 
 
