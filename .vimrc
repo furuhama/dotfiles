@@ -137,7 +137,7 @@ colorscheme gruvbox
 noremap <C-a> ^
 noremap <C-e> $
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
-nnoremap tt :tabe<CR>:terminal ++curwin<CR>
+" nnoremap tt :tabe<CR>:terminal ++curwin<CR>
 noremap tn :<C-u>tabnew<CR>
 noremap <C-n> gt
 noremap <C-p> gT
