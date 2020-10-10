@@ -129,7 +129,7 @@ alias la='ll -A'
 # cc
 alias gcc='gcc-9'
 # git
-alias gs='git status'
+alias gs='git status -s'
 alias gc='git commit -m'
 alias gcv='git commit -v'
 alias ga='git add'
