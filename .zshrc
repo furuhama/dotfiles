@@ -293,6 +293,11 @@ function ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^h' ghq-fzf
 
+function git-pr() {
+  git fetch origin pull/$1/head:pr-$1
+  git checkout pr-$1
+}
+
 # コマンドラインの編集を EDITOR 変数に設定してあるエディタから行えるように
 autoload -Uz edit-command-line
 zle -N edit-command-line
