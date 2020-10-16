@@ -250,7 +250,7 @@ setopt interactive_comments
 setopt monitor
 
 #=======================================================
-# others
+# functions
 #=======================================================
 
 function killport() {
@@ -281,8 +281,7 @@ bindkey '^r' history-fzf
 
 function ghq-fzf() {
   local target_path=$(ghq list -p | fzf)
-  if [ -n "$target_path" ]
-  then
+  if [ -n "$target_path" ]; then
     cd $target_path
     # ここで vcs_info を呼び出さないとディレクトリ移動後の初回のプロンプト表示で
     # 移動前の vcs の情報が表示されてしまう
