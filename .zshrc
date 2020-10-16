@@ -292,9 +292,27 @@ function ghq-fzf() {
 zle -N ghq-fzf
 bindkey '^h' ghq-fzf
 
-function git-pr() {
-  git fetch origin pull/$1/head:pr-$1
-  git checkout pr-$1
+# functions for GitHub
+
+function pr-list() {
+  gh api --paginate 'repos/:owner/:repo/pulls?state=open' | jq -r '.[] | [.number, .title] | @tsv' | fzf
+}
+
+function pr-checkout() {
+  local pr_num=$(pr-list | cut -f 1)
+
+  if [ -n "$pr_num" ]; then
+    git fetch origin pull/$pr_num/head:pr-$pr_num
+    git checkout pr-$pr_num
+  fi
+}
+
+function pr-open() {
+  local pr_num=$(pr-list | cut -f 1)
+
+  if [ -n "$pr_num" ]; then
+    gh pr view -w $pr_num
+  fi
 }
 
 # コマンドラインの編集を EDITOR 変数に設定してあるエディタから行えるように
