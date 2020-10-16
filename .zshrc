@@ -279,8 +279,11 @@ bindkey -r '^S'
 zle -N history-fzf
 bindkey '^r' history-fzf
 
-function ghq-fzf() {
-  local target_path=$(ghq list -p | fzf)
+function git-repo-fzf() {
+  # ghq で管理していない dotfiles もリストに追加
+  local ghq_list_p="$(ghq list -p)\n$HOME/dotfiles"
+
+  local target_path=$(echo $ghq_list_p | fzf)
   if [ -n "$target_path" ]; then
     cd $target_path
     # ここで vcs_info を呼び出さないとディレクトリ移動後の初回のプロンプト表示で
@@ -289,8 +292,8 @@ function ghq-fzf() {
     zle reset-prompt
   fi
 }
-zle -N ghq-fzf
-bindkey '^h' ghq-fzf
+zle -N git-repo-fzf
+bindkey '^h' git-repo-fzf
 
 # functions for GitHub
 
