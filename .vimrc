@@ -44,6 +44,9 @@ Plug 'lambdalisue/gina.vim'
 " tig
 Plug 'furuhama/vim-tig-viewer'
 
+" quickrun
+Plug 'thinca/vim-quickrun'
+
 call plug#end()
 
 " Required:
