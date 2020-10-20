@@ -10,6 +10,7 @@ set_link() {
 }
 
 set_link .gdbinit
+set_link .gitattributes
 set_link .gitconfig
 set_link .gitignore_global
 set_link .gitmessage

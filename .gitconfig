@@ -11,6 +11,7 @@
 	excludesfile = ~/.gitignore_global
 	pager = less -R -F -X
 	quotepath = false
+	attributesfile = /Users/furuhama.yusuke/.gitattributes
 [commit]
 	template = ~/.gitmessage
 [alias]
