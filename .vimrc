@@ -247,7 +247,14 @@ endfunction
 """"""""""""""""""""""""""""""
 " Vaffle
 """"""""""""""""""""""""""""""
-nnoremap <silent><C-x> :Vaffle pwd<CR>
+function! OpenVaffle() abort
+  if bufname('%') == ''
+    call vaffle#init()
+  else
+    call vaffle#init(expand('%:p'))
+  endif
+endfunction
+nnoremap <silent><C-x> :call OpenVaffle()<CR>
 let g:vaffle_show_hidden_files=1
 let g:vaffle_force_delete=1
 """"""""""""""""""""""""""""""
