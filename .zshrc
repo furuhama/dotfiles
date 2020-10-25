@@ -301,8 +301,17 @@ function pr-list() {
   gh api --paginate 'repos/:owner/:repo/pulls?state=open' | jq -r '.[] | [.number, .title] | @tsv' | fzf
 }
 
+# private
+function private-get-pr-num() {
+  if [ -n "$1" ]; then
+    echo $1
+  else
+    echo $(pr-list | cut -f 1)
+  fi
+}
+
 function pr-checkout() {
-  local pr_num=$(pr-list | cut -f 1)
+  local pr_num=$(private-get-pr-num $1)
 
   if [ -n "$pr_num" ]; then
     git fetch origin pull/$pr_num/head:pr-$pr_num
@@ -311,7 +320,7 @@ function pr-checkout() {
 }
 
 function pr-open() {
-  local pr_num=$(pr-list | cut -f 1)
+  local pr_num=$(private-get-pr-num $1)
 
   if [ -n "$pr_num" ]; then
     gh pr view -w $pr_num
