@@ -298,7 +298,7 @@ bindkey '^h' git-repo-fzf
 # functions for GitHub
 
 function pr-list() {
-  gh api --paginate 'repos/:owner/:repo/pulls?state=open' | jq -r '.[] | [.number, .title] | @tsv' | fzf
+  gh api --paginate 'repos/:owner/:repo/pulls?state=open' | jq -r '.[] | [.number, .user.login, .title] | @tsv' | fzf
 }
 
 # private
