@@ -14,6 +14,8 @@ export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 export PATH=/usr/local/opt/openssl/bin:$PATH
 export PATH=/usr/local/opt/curl/bin:$PATH
+# curl-openssl があればそちらを優先
+export PATH=/usr/local/opt/curl-openssl/bin:$PATH
 
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
