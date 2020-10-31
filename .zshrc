@@ -46,27 +46,12 @@ eval "$(direnv hook zsh)"
 export DIRENV_LOG_FORMAT=
 
 # nvm(node.js)
-# nvm command loading takes a lot of time
-# and make lazy load command
-nvm() {
-  echo "Lazy loading nvm..."
-
-  # Remove nvm function
-  unfunction "$0"
-
-  # Set PATH
-  export NVM_DIR=$HOME/.config/nvm
-
-  # Load nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-
-  # Set PATH for npm
-  export NODE_PATH=$(npm root -g):$NODE_PATH
-
-  # Call nvm
-  $0 "$@"
-}
-
+# Set PATH
+export NVM_DIR=$HOME/.config/nvm
+# Load nvm
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+# Set PATH for npm
+export NODE_PATH=$(npm root -g):$NODE_PATH
 # goenv
 goenv() {
   echo "Lazy loading goenv..."
