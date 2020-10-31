@@ -67,6 +67,7 @@ export GOENV_DISABLE_GOPATH=1
 export PATH=$PATH:$GOENV_ROOT/bin
 # gopath
 export GOPATH=$HOME/.go
+export GO111MODULE=on
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 # Rust
