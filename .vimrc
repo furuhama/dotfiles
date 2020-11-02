@@ -94,7 +94,7 @@ set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent
 " タブ文字の表示幅
-set tabstop=2
+set tabstop=4
 " Vimが挿入するインデントの幅
 set shiftwidth=2
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
