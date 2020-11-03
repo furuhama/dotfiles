@@ -96,7 +96,7 @@ set smartindent
 " タブ文字の表示幅
 set tabstop=4
 " Vimが挿入するインデントの幅
-set shiftwidth=2
+set shiftwidth=4
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
@@ -288,6 +288,10 @@ command Blame Gina blame
 
 
 """"""""""""""""""""""""""""""
-" filetypeの自動検出(最後の方に書いた方がいいらしい)
+" filetype ごとの設定と自動検出
+" (最後の方に書いた方がいいらしい)
 """"""""""""""""""""""""""""""
+autocmd FileType go setlocal noexpandtab
+autocmd FileType ruby setlocal shiftwidth=2
+
 filetype on
