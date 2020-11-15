@@ -125,7 +125,7 @@ augroup END
 " swp ファイルを作らない
 set noswapfile
 " current directory を切り替える
-set autochdir
+" set autochdir
 " <leader> を , に
 let mapleader = ','
 " colorscheme
