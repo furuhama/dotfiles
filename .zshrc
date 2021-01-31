@@ -51,7 +51,9 @@ export NVM_DIR=$HOME/.config/nvm
 # Load nvm
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 # Set PATH for npm
-export NODE_PATH=$(npm root -g):$NODE_PATH
+if type "npm" > /dev/null 2>&1; then
+    export NODE_PATH=$(npm root -g):$NODE_PATH
+fi
 # goenv
 goenv() {
   echo "Lazy loading goenv..."
