@@ -92,7 +92,9 @@ export LANG=ja_JP.UTF-8
 # for mysql(5.7)
 export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
 # java
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+if [[ $HOST != "gorilla.local" ]]; then
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+fi
 # デフォルトのエディタ設定
 export EDITOR=vim
 export VISUAL=vim
