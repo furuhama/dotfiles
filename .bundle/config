@@ -2,7 +2,7 @@
 BUNDLE_GEM__TEST: "rspec"
 BUNDLE_GEM__MIT: "true"
 BUNDLE_GEM__COC: "true"
-BUNDLE_PATH: "vendor/bundle"
+BUNDLE_PATH: ".bundle"
 BUNDLE_JOBS: "4"
 BUNDLE_BUILD__CHARLOCK_HOLMES: "--with-icu-dir=/usr/local/opt/icu4c"
 BUNDLE_BUILD__THERUBYRACER: "--with-v8-dir=/usr/local/opt/v8\@3.15"
