@@ -24,6 +24,7 @@ export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
 export MANPATH=/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH
 export MANPATH=/usr/local/opt/gawk/share/man:$MANPATH
 export MANPATH=/usr/local/opt/erlang/lib/erlang/man:$MANPATH
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # PATH for rbenv
 export PATH=$HOME/.rbenv/shims:$PATH
