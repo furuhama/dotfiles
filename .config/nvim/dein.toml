@@ -157,11 +157,6 @@ hook_add = '''
 repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
-            " \ 'colorscheme': 'nord',
-            " \ 'colorscheme': 'PaperColor',
-            " \ 'colorscheme': 'wombat',
-            " \ 'colorscheme': 'gruvbox',
-            " \ 'colorscheme': 'quantum',
             \ 'mode_map': {'c': 'NORMAL'},
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
@@ -172,7 +167,6 @@ hook_add = '''
             \   'readonly': 'LightlineReadonly',
             \   'fugitive': 'LightlineFugitive',
             \   'dirname': 'LightlineDirname',
-            " \   'filename': 'LightlineFilename',
             \   'fileformat': 'LightlineFileformat',
             \   'filetype': 'LightlineFiletype',
             \   'fileencoding': 'LightlineFileencoding',
