@@ -136,8 +136,8 @@ alias fgish='git push --force-with-lease'
 alias gill='git pull'
 alias gitch='git fetch'
 alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(master|release|develop)$' | xargs -I % git branch -d %"
-# vim
-alias vi='vim'
+# neovim
+alias vi='nvim'
 # ruby
 alias be='DISABLE_SPRING=1 bundle exec'
 # kubernetes
