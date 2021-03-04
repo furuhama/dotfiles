@@ -9,21 +9,6 @@ repo = 'Shougo/dein.vim'
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
-repo = 'cocopon/vaffle.vim'
-hook_add = '''
-    " function! OpenVaffle() abort
-    "   if bufname('%') == ''
-    "     call vaffle#init()
-    "   else
-    "     call vaffle#init(expand('%:p'))
-    "   endif
-    " endfunction
-    " nnoremap <silent><C-x> :call OpenVaffle()<CR>
-    " let g:vaffle_show_hidden_files=1
-    " let g:vaffle_force_delete=1
-'''
-
-[[plugins]]
 repo = 'lambdalisue/fern.vim'
 hook_add = '''
     function! s:fern_preview_init() abort
