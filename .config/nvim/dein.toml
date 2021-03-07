@@ -93,6 +93,9 @@ repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
+hook_add = '''
+    command Blame Gina blame
+'''
 
 
 [[plugins]]
