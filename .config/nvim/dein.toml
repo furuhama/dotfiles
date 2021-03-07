@@ -18,12 +18,14 @@ hook_add = '''
         \   "\<Plug>(fern-action-open:edit)\<C-w>p",
         \   "",
         \ )
-      nmap <buffer><expr> j
+
+      " Preview file content with <shift-j> <shift-k> moving
+      nmap <buffer><expr> J
         \ fern#smart#drawer(
         \   "j\<Plug>(fern-my-preview-or-nop)",
         \   "j",
         \ )
-      nmap <buffer><expr> k
+      nmap <buffer><expr> K
         \ fern#smart#drawer(
         \   "k\<Plug>(fern-my-preview-or-nop)",
         \   "k",
