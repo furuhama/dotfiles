@@ -95,6 +95,22 @@ repo = 'bronson/vim-trailing-whitespace'
 repo = 'lambdalisue/gina.vim'
 hook_add = '''
     command Blame Gina blame
+
+    function! GinaOpenPR() abort
+        redir => s:messages
+            call gina#action#call('blame:echo')
+        redir END
+        let s:lastmsg = get(split(s:messages, "\n"), -1, "")
+        let s:commit_hash = matchstr(s:lastmsg, '\[.*\]$')
+        if strlen(s:commit_hash) < 2
+            return
+        endif
+
+        let s:commit_hash = s:commit_hash[1:strlen(s:commit_hash)-2]
+        call system(printf("git openpr %s", s:commit_hash))
+    endfunction
+
+    command OpenPR call GinaOpenPR()
 '''
 
 
