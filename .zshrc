@@ -142,6 +142,8 @@ alias vi='nvim'
 alias be='DISABLE_SPRING=1 bundle exec'
 # kubernetes
 alias k='kubectl'
+# typo
+alias dc='cd'
 
 #=======================================================
 # zplug
