@@ -181,10 +181,18 @@ repo = 'arcticicestudio/nord-vim'
 
 [[plugins]]
 repo = 'morhetz/gruvbox'
+# hook_add = '''
+#     colorscheme gruvbox
+#     set background=dark
+#     let g:gruvbox_sign_column='bg0'
+# '''
+
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
 hook_add = '''
-    colorscheme gruvbox
+    colorscheme gruvbox-material
     set background=dark
-    let g:gruvbox_sign_column='bg0'
+    let g:gruvbox_material_disable_italic_comment = 1
 '''
 
 # ==========================
