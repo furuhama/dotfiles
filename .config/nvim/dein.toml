@@ -39,7 +39,7 @@ hook_add = '''
 
     let g:fern#default_hidden=1
 
-    nnoremap <silent><C-x> :Fern . -drawer -toggle<CR>
+    nnoremap <silent><C-x> :Fern . -drawer -width=40 -toggle<CR>
 '''
 
 [[plugins]]
