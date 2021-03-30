@@ -133,7 +133,7 @@ alias gch='git checkout'
 alias gg='git grep'
 alias gish='git push'
 alias fgish='git push --force-with-lease'
-alias gill='git pull --prune'
+alias gill='git pull'
 alias gitch='git fetch'
 alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(master|release|develop|main)$' | xargs -I % git branch -d %"
 # neovim
