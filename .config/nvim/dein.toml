@@ -30,6 +30,10 @@ hook_add = '''
         \   "k\<Plug>(fern-my-preview-or-nop)",
         \   "k",
         \ )
+
+      " override <C-j/k> with j/k not to mark symbols
+      nmap <buffer><expr> <C-j> "j"
+      nmap <buffer><expr> <C-k> "k"
     endfunction
 
     augroup my-fern-preview
