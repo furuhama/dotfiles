@@ -122,19 +122,6 @@ alias la='ll -A'
 # cc
 alias gcc='gcc-9'
 # git
-alias gs='git status -s'
-alias gc='git commit -m'
-alias gcv='git commit -v'
-alias ga='git add'
-alias gd='git diff --color-moved'
-alias gl='git log'
-alias gb='git branch'
-alias gch='git checkout'
-alias gg='git grep'
-alias gish='git push'
-alias fgish='git push --force-with-lease'
-alias gill='git pull'
-alias gitch='git fetch'
 alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(master|release|develop|main)$' | xargs -I % git branch -d %"
 # neovim
 alias vi='nvim'
