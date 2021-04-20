@@ -110,6 +110,8 @@ export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
 export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+# bat color
+export BAT_THEME='gruvbox-dark'
 
 #=======================================================
 # alias
