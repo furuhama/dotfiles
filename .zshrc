@@ -55,6 +55,7 @@ export NVM_DIR=$HOME/.config/nvm
 if type "npm" > /dev/null 2>&1; then
     export NODE_PATH=$(npm root -g):$NODE_PATH
 fi
+export PATH=$PATH:./node_modules/.bin
 # goenv
 goenv() {
   echo "Lazy loading goenv..."
