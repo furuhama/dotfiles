@@ -299,8 +299,7 @@ function pr-checkout() {
   local pr_num=$(private-get-pr-num $1)
 
   if [ -n "$pr_num" ]; then
-    git fetch origin pull/$pr_num/head:pr-$pr_num
-    git checkout pr-$pr_num
+    gh pr checkout $pr_num
   fi
 }
 
