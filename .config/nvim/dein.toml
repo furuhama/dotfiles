@@ -43,7 +43,9 @@ hook_add = '''
 
     let g:fern#default_hidden=1
 
-    nnoremap <silent><C-x> :Fern . -drawer -width=40 -toggle<CR>
+    nnoremap <silent><C-x> :Fern . -reveal=%<CR>
+    " If you want to open fern view as a sidebar, set as below
+    " nnoremap <silent><C-x> :Fern . -drawer -width=40 -toggle<CR>
 '''
 
 [[plugins]]
