@@ -37,3 +37,6 @@ set_link_with_dir Library/Preferences cargo-atcoder.toml
 # nvim is a directory
 mkdir -p .config
 ln -vfs $HOME/dotfiles/.config/nvim $HOME/.config/
+
+# user-defined git commands
+ln -vfs $HOME/dotfiles/git-scripts/git-cleanup /usr/local/bin/git-cleanup

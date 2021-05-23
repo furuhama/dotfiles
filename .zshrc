@@ -124,8 +124,6 @@ alias ll='ls -lh'
 alias la='ll -A'
 # cc
 alias gcc='gcc-9'
-# git
-alias gclean="git branch --merged | rg -v '\*' | sed -e 's/[*| ] //' | rg -v '^(master|release|develop|main)$' | xargs -I % git branch -d %"
 # neovim
 alias vi='nvim'
 # ruby
