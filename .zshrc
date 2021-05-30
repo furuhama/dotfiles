@@ -132,6 +132,8 @@ alias be='DISABLE_SPRING=1 bundle exec'
 alias k='kubectl'
 # typo
 alias dc='cd'
+# typora
+alias typora='open -a Typora'
 
 #=======================================================
 # zplug
