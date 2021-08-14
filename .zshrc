@@ -46,29 +46,14 @@ eval "$(direnv hook zsh)"
 # To surpress direnv STDOUT log, set DIRENV_LOG_FORMAT to NULL
 export DIRENV_LOG_FORMAT=
 
-# nvm(node.js)
-# Set PATH
-export NVM_DIR=$HOME/.config/nvm
-# Load nvm
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+# asdf
+. $(brew --prefix asdf)/libexec/asdf.sh
+
 # Set PATH for npm
 if type "npm" > /dev/null 2>&1; then
     export NODE_PATH=$(npm root -g):$NODE_PATH
 fi
 export PATH=$PATH:./node_modules/.bin
-# goenv
-goenv() {
-  echo "Lazy loading goenv..."
-
-  unfunction "$0"
-
-  eval "$(goenv init -)"
-
-  $0 "$@"
-}
-export GOENV_ROOT=$HOME/.goenv
-export GOENV_DISABLE_GOPATH=1
-export PATH=$PATH:$GOENV_ROOT/bin
 # gopath
 export GOPATH=$HOME/.go
 export GO111MODULE=on
