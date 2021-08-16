@@ -9,6 +9,7 @@ set_link() {
     ln -vfs $HOME/dotfiles/$1 $HOME/$1
 }
 
+set_link .asdfrc
 set_link .gdbinit
 set_link .gitattributes
 set_link .gitconfig
