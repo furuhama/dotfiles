@@ -35,12 +35,6 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 # eval "$(rbenv init -)"
 source ~/.rbenv_init
 
-# pyenvさんに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
-export PYENV_ROOT=/usr/local/var/pyenv
-# pyenv init 処理が重たいので rehash を適宜手動で行うことにした
-# eval "$(pyenv init -)"
-source ~/.pyenv_init
-
 # direnv
 eval "$(direnv hook zsh)"
 # To surpress direnv STDOUT log, set DIRENV_LOG_FORMAT to NULL
