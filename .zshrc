@@ -166,7 +166,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # いろんな顔文字をランダムで表示したい
 # (下記部分はバックグラウンドプロセスの数を表示している)
 # %F{menta}%(1j. %j.)%f
-KAOMOJIS=("( '-')" "( T-T)" "( .-.)" "( 0_0)" "( >_<)" "( *-*)" "( o_o)" "(′•_•)" "( 'm')")
+KAOMOJIS=("( '-')" "( T-T)" "( .-.)" "( 0_0)" "( >_<)" "( *-*)" "( o_o)" "(′•_•)" "( 'm')" "(*'~')" "(*;-;)" "( @-@)")
 KAOMOJI_LENGTH="${#KAOMOJIS[@]}"
 KAOMOJI="${KAOMOJIS[${$((RANDOM % KAOMOJI_LENGTH + 1))}]}"
 # いろんな顔文字ver
