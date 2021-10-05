@@ -31,3 +31,6 @@ git-worktrees
 
 # for ripgrep
 .rgignore
+
+# direnv
+.envrc
