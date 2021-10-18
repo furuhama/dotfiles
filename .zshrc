@@ -108,6 +108,10 @@ alias k='kubectl'
 alias dc='cd'
 # typora
 alias typora='open -a Typora'
+# pipenv
+alias p='pipenv'
+# npm
+alias n='npm'
 
 #=======================================================
 # zplug
