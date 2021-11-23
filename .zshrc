@@ -4,24 +4,32 @@
 #=======================================================
 # PATH, ENV
 #=======================================================
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/opt/binutils/bin:$PATH
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/openssl/bin:$PATH
-export PATH=/usr/local/opt/curl/bin:$PATH
-# curl-openssl があればそちらを優先
-export PATH=/usr/local/opt/curl-openssl/bin:$PATH
 
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-export MANPATH=/usr/local/opt/findutils/libexec/gnuman:$MANPATH
+ARCH=$(uname -m)
+if [[ $ARCH == arm64 ]]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+elif [[ $ARCH == x86_64 ]]; then
+    eval $(/usr/local/bin/brew shellenv)
+fi
+
+export PATH=$HOMEBREW_PREFIX/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/binutils/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/openssl/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/curl/bin:$PATH
+# curl-openssl があればそちらを優先
+export PATH=$HOMEBREW_PREFIX/opt/curl-openssl/bin:$PATH
+
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
-export MANPATH=/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH
-export MANPATH=/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH
-export MANPATH=/usr/local/opt/gawk/share/man:$MANPATH
-export MANPATH=/usr/local/opt/erlang/lib/erlang/man:$MANPATH
+export MANPATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH
+export MANPATH=$HOMEBREW_PREFIX/opt/findutils/libexec/gnuman:$MANPATH
+export MANPATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnuman:$MANPATH
+export MANPATH=$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnuman:$MANPATH
+export MANPATH=$HOMEBREW_PREFIX/opt/gawk/share/man:$MANPATH
+export MANPATH=$HOMEBREW_PREFIX/opt/erlang/lib/erlang/man:$MANPATH
 export MANPAGER="nvim -c 'set ft=man' -"
 
 # rbenv が homebrew で入れた openssl にデフォルトで依存しなくなったため
@@ -59,13 +67,13 @@ export PATH=$HOME/.local/bin:$PATH
 # neovim
 export XDG_CONFIG_HOME=$HOME/.config
 # PostgreSQL
-export PGDATA=/usr/local/var/postgres
+export PGDATA=$HOMEBREW_PREFIX/var/postgres
 # Set library path
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/lib
+export LIBRARY_PATH=$LIBRARY_PATH:$HOMEBREW_PREFIX/lib
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
 # for mysql(5.7)
-export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/mysql@5.7/bin:$PATH
 # java
 if [[ $HOST != "gorilla.local" ]]; then
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
@@ -83,7 +91,7 @@ export SAVEHIST=1000000
 export LSCOLORS=gxfxxxxxcxxxxxxxxxgxgx
 export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
 export LESS='-g -i -M -R -S -W -z-4 -x4'
-export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+export LESSOPEN='| $HOMEBREW_PREFIX/bin/src-hilite-lesspipe.sh %s'
 # bat color
 export BAT_THEME='gruvbox-dark'
 
@@ -117,7 +125,7 @@ alias n='npm'
 #=======================================================
 
 # brew upgrade 等で zsh が起動しなくなったら下記ディレクトリのシンボリックリンクをチェック
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "zplug/zplug"
