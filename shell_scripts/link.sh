@@ -40,4 +40,13 @@ mkdir -p .config
 ln -vfs $HOME/dotfiles/.config/nvim $HOME/.config/
 
 # user-defined git commands
-ln -vfs $HOME/dotfiles/git-scripts/git-cleanup /usr/local/bin/git-cleanup
+set_git_command_link() {
+    local arch=$(uname -m)
+    if [[ $arch == arm64 ]]; then
+        sudo ln -vfs $HOME/dotfiles/git-scripts/git-cleanup /usr/local/bin/git-cleanup
+    elif [[ $ARCH == x86_64 ]]; then
+        ln -vfs $HOME/dotfiles/git-scripts/git-cleanup /usr/local/bin/git-cleanup
+    fi
+}
+
+set_git_command_link
