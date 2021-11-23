@@ -4,8 +4,6 @@
 #=======================================================
 # PATH, ENV
 #=======================================================
-export NODE_PATH=/usr/local/share/npm/lib/node_modules:$NODE_PATH
-
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/binutils/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -39,6 +37,7 @@ export DIRENV_LOG_FORMAT=
 . $(brew --prefix asdf)/libexec/asdf.sh
 
 # Set PATH for npm
+export NODE_PATH=$HOMEBREW_PREFIX/share/npm/lib/node_modules:$NODE_PATH
 if type "npm" > /dev/null 2>&1; then
     export NODE_PATH=$(npm root -g):$NODE_PATH
 fi
