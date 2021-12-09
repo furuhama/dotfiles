@@ -22,6 +22,7 @@ export PATH=$HOMEBREW_PREFIX/opt/openssl/bin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/curl/bin:$PATH
 # curl-openssl があればそちらを優先
 export PATH=$HOMEBREW_PREFIX/opt/curl-openssl/bin:$PATH
+export PATH=$HOME/.poetry/bin:$PATH
 
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export MANPATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH
