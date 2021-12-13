@@ -93,6 +93,7 @@ export LESS='-g -i -M -R -S -W -z-4 -x4'
 export LESSOPEN='| $HOMEBREW_PREFIX/bin/src-hilite-lesspipe.sh %s'
 # bat color
 export BAT_THEME='gruvbox-dark'
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 #=======================================================
 # alias
