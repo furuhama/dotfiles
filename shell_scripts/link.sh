@@ -17,9 +17,8 @@ set_link .gitignore_global
 set_link .hgrc
 set_link .hushlogin
 set_link .pryrc
-set_link .pyenv_init
 set_link .pylintrc
-set_link .rbenv_init
+set_link .ripgreprc
 set_link .tigrc
 set_link .tmux.conf
 set_link .vimrc
