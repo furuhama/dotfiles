@@ -73,6 +73,8 @@ export PGDATA=$HOMEBREW_PREFIX/var/postgres
 export LIBRARY_PATH=$LIBRARY_PATH:$HOMEBREW_PREFIX/lib
 # for Hyper(electron based terminal app) to display Japanese languages
 export LANG=ja_JP.UTF-8
+# for pipenv
+export PIPENV_VENV_IN_PROJECT=true
 # for mysql(5.7)
 export PATH=$HOMEBREW_PREFIX/opt/mysql@5.7/bin:$PATH
 # java
