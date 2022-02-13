@@ -121,6 +121,8 @@ alias typora='open -a Typora'
 alias p='pipenv'
 # npm
 alias n='npm'
+# set gnu commands as default
+alias sed='gsed'
 
 #=======================================================
 # zplug
