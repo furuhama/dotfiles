@@ -300,6 +300,19 @@ function pr-open() {
   fi
 }
 
+# filter which comamnds to be stored in history
+zshaddhistory() {
+    local line=${1%%$'\n'}
+    local cmd=${line%% *}
+
+    # commands only passing conditions below will be added to history
+    [[ ${cmd} != (l[sal])
+        && ${cmd} != 'cd'
+        && ${line} != 'vi'
+        && "$(command -v $cmd)" != ''
+    ]]
+}
+
 # コマンドラインの編集を EDITOR 変数に設定してあるエディタから行えるように
 autoload -Uz edit-command-line
 zle -N edit-command-line
