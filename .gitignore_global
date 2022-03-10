@@ -34,3 +34,5 @@ git-worktrees
 
 # direnv
 .envrc
+
+.mypy_cache
