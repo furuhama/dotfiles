@@ -58,6 +58,9 @@ hook_add = '''
     xmap <silent> <C-k> <Plug>(columnskip-k)
 '''
 
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
 # ===============
 # search
 # ===============
