@@ -166,6 +166,9 @@ hook_add = '''
     inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 '''
 
+[[plugins]]
+repo = 'github/copilot.vim'
+
 # ==========================
 # color scheme
 # ==========================
