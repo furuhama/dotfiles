@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+git symbolic-ref refs/remotes/origin/HEAD | cut -d '/' -f4
