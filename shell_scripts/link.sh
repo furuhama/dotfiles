@@ -37,6 +37,7 @@ set_link_with_dir Library/Preferences cargo-atcoder.toml
 # nvim is a directory
 mkdir -p .config
 ln -vfs $HOME/dotfiles/.config/nvim $HOME/.config/
+ln -vfs $HOME/dotfiles/.config/pip $HOME/.config/
 
 # user-defined git commands
 set_git_command_link() {
