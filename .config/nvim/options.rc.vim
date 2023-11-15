@@ -40,6 +40,7 @@ set nofoldenable
 " ファイルを自動で再読み込みする
 set autoread
 set guicursor=
+set mouse=
 
 " ======================
 " keybind settings
