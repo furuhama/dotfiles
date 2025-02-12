@@ -23,6 +23,7 @@ export PATH=$HOMEBREW_PREFIX/opt/curl/bin:$PATH
 # curl-openssl があればそちらを優先
 export PATH=$HOMEBREW_PREFIX/opt/curl-openssl/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
+export PATH=$HOME/.asdf/shims:$PATH
 
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export MANPATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH
@@ -41,9 +42,6 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 eval "$(direnv hook zsh)"
 # To surpress direnv STDOUT log, set DIRENV_LOG_FORMAT to NULL
 export DIRENV_LOG_FORMAT=
-
-# asdf
-. $(brew --prefix asdf)/libexec/asdf.sh
 
 # Set PATH for npm
 export NODE_PATH=$HOMEBREW_PREFIX/share/npm/lib/node_modules:$NODE_PATH
