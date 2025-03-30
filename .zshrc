@@ -24,6 +24,8 @@ export PATH=$HOMEBREW_PREFIX/opt/curl/bin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/curl-openssl/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
 export PATH=$HOME/.asdf/shims:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/mysql@8.0/bin:$PATH
+export PATH=$HOMEBREW_PREFIX/opt/openjdk@21/bin:$PATH
 
 export MANPATH=/opt/local/share/man:/opt/local/man:$MANPATH
 export MANPATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH
@@ -50,7 +52,7 @@ if type "npm" > /dev/null 2>&1; then
 fi
 export PATH=$PATH:./node_modules/.bin
 # gopath
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/go
 export GO111MODULE=on
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
