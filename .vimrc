@@ -31,15 +31,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" LSP
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
 " git
-Plug 'lambdalisue/gina.vim'
+Plug 'vim-denops/denops.vim'
+Plug 'lambdalisue/vim-gin'
 
 " tig
 Plug 'furuhama/vim-tig-viewer'
@@ -160,27 +154,6 @@ let g:fzf_layout = { 'down': '~40%' }
 
 
 """"""""""""""""""""""""""""""
-" vim-lsp
-""""""""""""""""""""""""""""""
-let g:lsp_signs_error = {'text': '!'}
-let g:lsp_signs_warning = {'text': '>'}
-let g:lsp_signs_hint = {'text': '?'}
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 0
-set completeopt=menuone,noinsert,noselect,preview
-let g:asyncomplete_popup_delay = 100
-let g:lsp_text_edit_enabled = 1
-
-" ファイル保存時に format を実行する
-autocmd BufWritePre * LspDocumentFormatSync
-
-nnoremap gd :LspDefinition<CR>
-""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
 " lightline
 """"""""""""""""""""""""""""""
 let g:lightline = {
@@ -280,10 +253,11 @@ let g:NERDDefaultAlign='left'
 
 
 """"""""""""""""""""""""""""""
-" Gina vim
+" Gin vim
 """"""""""""""""""""""""""""""
 " alias
-command Blame Gina blame
+" This doesn't seem to work on 2025 May 6th
+" command Blame Gina blame
 """"""""""""""""""""""""""""""
 
 
