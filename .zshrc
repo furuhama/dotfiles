@@ -34,7 +34,7 @@ export MANPATH=$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnuman:$MANPATH
 export MANPATH=$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnuman:$MANPATH
 export MANPATH=$HOMEBREW_PREFIX/opt/gawk/share/man:$MANPATH
 export MANPATH=$HOMEBREW_PREFIX/opt/erlang/lib/erlang/man:$MANPATH
-export MANPAGER="col -b -x | nvim -R -c 'set ft=man' -"
+export MANPAGER="col -b -x | vim -R -c 'set ft=man' -"
 
 # rbenv が homebrew で入れた openssl にデフォルトで依存しなくなったため
 # homebrew 経由の openssl を見るように環境変数にて指定
@@ -107,8 +107,8 @@ alias ll='ls -lh'
 alias la='ll -A'
 # cc
 alias gcc='gcc-9'
-# neovim
-alias vi='nvim'
+# vim
+alias vi='vim'
 # ruby
 alias be='DISABLE_SPRING=1 bundle exec'
 # kubernetes
