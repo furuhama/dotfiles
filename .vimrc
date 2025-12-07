@@ -255,9 +255,7 @@ let g:NERDDefaultAlign='left'
 """"""""""""""""""""""""""""""
 " Gin vim
 """"""""""""""""""""""""""""""
-" alias
-" This doesn't seem to work on 2025 May 6th
-" command Blame Gina blame
+command Blame GinBlame ++emojify %
 """"""""""""""""""""""""""""""
 
 
