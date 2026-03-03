@@ -9,7 +9,15 @@ return {
     event = "BufReadPost",
     config = function()
       require("nvim-treesitter.config").setup({
-        ensure_installed = { "lua", "vim", "vimdoc", "rust", "ruby", "go", "toml", "markdown" },
+        ensure_installed = {
+          "lua", "vim", "vimdoc",
+          "rust", "ruby", "go", "kotlin", "javascript", "typescript",
+          "toml", "json", "yaml",
+          "bash", "html", "css", "sql",
+          "diff", "dockerfile", "terraform", "proto",
+          "c_sharp", "haskell", "commonlisp",
+          "markdown",
+        },
         highlight = { enable = true },
         indent = { enable = true },
       })
