@@ -1,0 +1,23 @@
+{
+  "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
+  "askpass.vim": { "branch": "main", "commit": "c40b7e296ad626ffebdf26793236a55c8e3517ca" },
+  "columnskip.vim": { "branch": "master", "commit": "1c7ec7a8ca9eea0cfe41ac3150904b5df9a4743d" },
+  "denops.vim": { "branch": "main", "commit": "5cfca39988a36e42d81b925264fc846077a727e3" },
+  "fern.vim": { "branch": "main", "commit": "d0b5befc0321126384981d6cf3c1b561014c65a2" },
+  "fzf": { "branch": "master", "commit": "260d160973a1df05038c93136a076ca29592e755" },
+  "fzf.vim": { "branch": "master", "commit": "34a564c81f36047f50e593c1656f4580ff75ccca" },
+  "gin.vim": { "branch": "main", "commit": "726a2eede0f03e97507ec99ea20cba83f8eb086e" },
+  "gruvbox": { "branch": "master", "commit": "697c00291db857ca0af00ec154e5bd514a79191f" },
+  "guise.vim": { "branch": "main", "commit": "eae13cebec562dda4378765da3b9044bde81d07a" },
+  "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "lightline.vim": { "branch": "master", "commit": "e358557e1a9f9fc860416c8eb2e34c0404078155" },
+  "nord-vim": { "branch": "main", "commit": "f13f5dfbb784deddbc1d8195f34dfd9ec73e2295" },
+  "nvim-treesitter": { "branch": "main", "commit": "cb2cb74f3c3cbbcc17e79cada2060165d616d849" },
+  "reply.vim": { "branch": "master", "commit": "f458f7c13cbd8eafaf9acd69e8eade71416338c5" },
+  "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
+  "vim-color-spring-night": { "branch": "master", "commit": "e6bf5b7068ce7d54d4133f0975811528627ea381" },
+  "vim-quickrun": { "branch": "master", "commit": "77b4d6ea9972a206f02c736882c2398c36d2983c" },
+  "vim-rails": { "branch": "master", "commit": "b0a5c76f86ea214ade36ab0b811e730c3f0add67" },
+  "vim-tig-viewer": { "branch": "master", "commit": "170a69f1aa64860749652ec9a4b2c095e0a1f607" },
+  "vim-trailing-whitespace": { "branch": "master", "commit": "5540b3faa2288b226a8d9a4e8244558b12c598aa" }
+}
