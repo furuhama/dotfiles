@@ -80,8 +80,8 @@ export PATH=$HOMEBREW_PREFIX/opt/mysql@5.7/bin:$PATH
 # java
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # デフォルトのエディタ設定
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
 # メモリに保存される履歴の件数
@@ -107,8 +107,8 @@ alias ll='ls -lh'
 alias la='ll -A'
 # cc
 alias gcc='gcc-9'
-# vim
-alias vi='vim'
+# nvim
+alias vi='nvim'
 # ruby
 alias be='DISABLE_SPRING=1 bundle exec'
 # kubernetes
