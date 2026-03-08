@@ -12,6 +12,7 @@
   "guise.vim": { "branch": "main", "commit": "eae13cebec562dda4378765da3b9044bde81d07a" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "lightline.vim": { "branch": "master", "commit": "e358557e1a9f9fc860416c8eb2e34c0404078155" },
+  "markview.nvim": { "branch": "main", "commit": "239feb70ed1cfc26e2c91b32590fd63f7b015599" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a324581a3c83fdacdb9804b79de1cbe00ce18550" },
   "mason.nvim": { "branch": "main", "commit": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65" },
   "nord-vim": { "branch": "main", "commit": "f13f5dfbb784deddbc1d8195f34dfd9ec73e2295" },

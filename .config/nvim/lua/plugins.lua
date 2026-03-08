@@ -16,7 +16,7 @@ return {
           "bash", "html", "css", "sql",
           "diff", "dockerfile", "terraform", "proto",
           "c_sharp", "haskell", "commonlisp",
-          "markdown",
+          "markdown", "markdown_inline",
         },
         highlight = { enable = true },
         indent = { enable = true },
@@ -263,6 +263,17 @@ return {
     config = function()
       require("lsp")
     end,
+  },
+
+  -- ==========================
+  -- markdown preview
+  -- ==========================
+  {
+    "OXY2DEV/markview.nvim",
+    ft = "markdown",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 
   -- ==========================
