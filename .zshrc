@@ -121,28 +121,15 @@ alias typora='open -a Typora'
 alias sed='gsed'
 
 #=======================================================
-# zplug
+# zsh plugins
+# プラグインは ~/.zsh/plugins/ に git clone して管理
+# 更新: 各ディレクトリで git pull
 #=======================================================
 
-# brew upgrade 等で zsh が起動しなくなったら下記ディレクトリのシンボリックリンクをチェック
-export ZPLUG_HOME=$HOMEBREW_PREFIX/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-zplug "zplug/zplug"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-# zsh の起動が遅いので未インストールのものをチェックする工程を飛ばしている
-# plugin をいじった場合にはここのコメントアウトを外すこと
-# if ! zplug check --verbose; then
-#   printf "Install? [y/N]: "
-#   if read -q; then
-#     echo; zplug install
-#   fi
-# fi
-
-zplug load
+ZSH_PLUGINS=$HOME/.zsh/plugins
+fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
+source $ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #=======================================================
 # prompt
@@ -316,3 +303,6 @@ bindkey '^x' edit-command-line
 
 # emacs-like keybind
 bindkey -e
+
+# finish profiling
+# zprof
