@@ -66,7 +66,6 @@ export NODE_PATH=$HOMEBREW_PREFIX/share/npm/lib/node_modules:$NODE_PATH
 export PATH=$PATH:./node_modules/.bin
 # gopath
 export GOPATH=$HOME/go
-export GO111MODULE=on
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 # Rust
@@ -88,10 +87,9 @@ export LIBRARY_PATH=$LIBRARY_PATH:$HOMEBREW_PREFIX/lib
 export LANG=ja_JP.UTF-8
 # for pipenv
 export PIPENV_VENV_IN_PROJECT=true
-# for mysql(5.7)
-export PATH=$HOMEBREW_PREFIX/opt/mysql@5.7/bin:$PATH
-# java
-# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 # デフォルトのエディタ設定
 export EDITOR=nvim
 export VISUAL=nvim
@@ -118,8 +116,6 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -lh'
 alias la='ll -A'
-# cc
-alias gcc='gcc-9'
 # nvim
 alias vi='nvim'
 # ruby
