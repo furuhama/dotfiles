@@ -5,12 +5,21 @@
 # PATH, ENV
 #=======================================================
 
+# brew shellenv をキャッシュ化（毎回 brew バイナリを起動しない）
+# brew バイナリより新しいキャッシュがなければ再生成する
+# キャッシュを消したい場合: rm ~/.cache/brew_shellenv_*.zsh
 ARCH=$(uname -m)
 if [[ $ARCH == arm64 ]]; then
-    eval $(/opt/homebrew/bin/brew shellenv)
-elif [[ $ARCH == x86_64 ]]; then
-    eval $(/usr/local/bin/brew shellenv)
+  _brew_bin=/opt/homebrew/bin/brew
+else
+  _brew_bin=/usr/local/bin/brew
 fi
+_brew_env_cache="$HOME/.cache/brew_shellenv_${ARCH}.zsh"
+if [[ ! -f "$_brew_env_cache" || "$_brew_bin" -nt "$_brew_env_cache" ]]; then
+  mkdir -p "$HOME/.cache"
+  "$_brew_bin" shellenv >| "$_brew_env_cache"
+fi
+source "$_brew_env_cache"
 
 export PATH=$HOMEBREW_PREFIX/bin:$PATH
 export PATH=$HOMEBREW_PREFIX/opt/binutils/bin:$PATH
@@ -38,18 +47,22 @@ export MANPAGER="col -b -x | vim -R -c 'set ft=man' -"
 
 # rbenv が homebrew で入れた openssl にデフォルトで依存しなくなったため
 # homebrew 経由の openssl を見るように環境変数にて指定
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# brew shellenv キャッシュ後に HOMEBREW_PREFIX が展開済みなので変数参照で代替（brew の二重起動を避ける）
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl@1.1"
 
-# direnv
-eval "$(direnv hook zsh)"
+# direnv hook をキャッシュ化（バージョンアップ以外でフック内容は変わらない）
+# direnv アップデート後は rm ~/.cache/direnv_hook.zsh で再生成
+_direnv_hook_cache="$HOME/.cache/direnv_hook.zsh"
+if [[ ! -f "$_direnv_hook_cache" ]]; then
+  mkdir -p "$HOME/.cache"
+  direnv hook zsh >| "$_direnv_hook_cache"
+fi
+source "$_direnv_hook_cache"
 # To surpress direnv STDOUT log, set DIRENV_LOG_FORMAT to NULL
 export DIRENV_LOG_FORMAT=
 
 # Set PATH for npm
 export NODE_PATH=$HOMEBREW_PREFIX/share/npm/lib/node_modules:$NODE_PATH
-if type "npm" > /dev/null 2>&1; then
-    export NODE_PATH=$(npm root -g):$NODE_PATH
-fi
 export PATH=$PATH:./node_modules/.bin
 # gopath
 export GOPATH=$HOME/go
