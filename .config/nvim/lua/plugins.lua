@@ -248,6 +248,24 @@ return {
   },
 
   -- ==========================
+  -- LSP
+  -- ==========================
+  { "williamboman/mason.nvim" },
+  { "neovim/nvim-lspconfig" },
+  { "saghen/blink.cmp", version = "*" },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
+      "saghen/blink.cmp",
+    },
+    config = function()
+      require("lsp")
+    end,
+  },
+
+  -- ==========================
   -- language-specific (lazy)
   -- ==========================
   {

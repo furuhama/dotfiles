@@ -42,13 +42,7 @@ vim.opt.splitright = true
 -- ======================
 -- completion settings
 -- ======================
-vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
-vim.keymap.set("i", "<TAB>", function()
-  return vim.fn.pumvisible() == 1 and "<C-n>" or "<TAB>"
-end, { expr = true })
-vim.keymap.set("i", "<S-TAB>", function()
-  return vim.fn.pumvisible() == 1 and "<C-p>" or "<C-h>"
-end, { expr = true })
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- ======================
 -- keybind settings
