@@ -58,7 +58,7 @@ return {
         augroup END
       ]])
       vim.g["fern#default_hidden"] = 1
-      vim.keymap.set("n", "<C-x>", ":Fern . -reveal=%<CR>", { silent = true })
+      vim.keymap.set("n", "<C-x>", ":Fern . -drawer -reveal=%<CR>", { silent = true })
     end,
   },
 
