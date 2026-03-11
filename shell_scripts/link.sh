@@ -23,6 +23,7 @@ set_link .tigrc
 set_link .tmux.conf
 set_link .vimrc
 set_link .zshrc
+set_link .zshrc.local
 
 set_link_with_dir() {
     mkdir -p $HOME/$1

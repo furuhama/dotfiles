@@ -310,6 +310,17 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^x' edit-command-line
 
+#=======================================================
+# environmental settings
+#=======================================================
+
+# 端末ごとのローカル設定（git管理外）
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+#=======================================================
+# ending
+#=======================================================
+
 # emacs-like keybind
 bindkey -e
 
