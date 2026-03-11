@@ -74,11 +74,6 @@ return {
   },
 
   -- ==========================
-  -- run
-  -- ==========================
-  { "thinca/vim-quickrun" },
-
-  -- ==========================
   -- search
   -- ==========================
   {
@@ -136,7 +131,6 @@ return {
   -- ==========================
   -- color scheme
   -- ==========================
-  { "rhysd/vim-color-spring-night", lazy = true },
   { "arcticicestudio/nord-vim",     lazy = true },
   {
     "morhetz/gruvbox",
