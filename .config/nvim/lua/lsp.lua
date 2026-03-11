@@ -1,6 +1,17 @@
 -- blink.cmp setup (must come before get_lsp_capabilities)
 require("blink.cmp").setup({
-  keymap = { preset = "default" },
+  keymap = {
+    preset = "none",
+    ["<Tab>"]   = { "select_next", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "fallback" },
+    ["<CR>"]    = { "accept", "fallback" },
+    ["<C-e>"]   = { "hide" },
+  },
+  completion = {
+    list = {
+      selection = { preselect = false },
+    },
+  },
   sources = {
     default = { "lsp", "buffer" },
   },
