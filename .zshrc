@@ -235,6 +235,8 @@ function chpwd() { ls -a; _update_terminal_title }
 
 # 新しいタブ/ウィンドウ表示時にも即反映
 add-zsh-hook precmd _update_terminal_title
+# コマンド実行開始時にもセット（プロセスによる上書きを防ぐ）
+add-zsh-hook preexec _update_terminal_title
 
 function history-fzf() {
   # BSD 系の `tail` コマンドには -r で逆順に出力するオプションが存在する
