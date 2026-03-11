@@ -226,8 +226,15 @@ function killport() {
 # function to echo $PATH
 function echopath() { echo $PATH | awk '{gsub(":", "\n", $0); print $0}' }
 
-# iTermのタブに現在のディレクトリと一つ上のディレクトリを表示
-function chpwd() { ls -a; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
+# タブ/ウィンドウタイトルを現在のディレクトリに更新
+function _update_terminal_title() {
+  echo -ne "\033]0;${PWD##*/}\007"
+}
+
+function chpwd() { ls -a; _update_terminal_title }
+
+# 新しいタブ/ウィンドウ表示時にも即反映
+add-zsh-hook precmd _update_terminal_title
 
 function history-fzf() {
   # BSD 系の `tail` コマンドには -r で逆順に出力するオプションが存在する
