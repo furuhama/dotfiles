@@ -118,14 +118,6 @@ alias ll='ls -lh'
 alias la='ll -A'
 # nvim
 alias vi='nvim'
-# ruby
-alias be='DISABLE_SPRING=1 bundle exec'
-# kubernetes
-alias k='kubectl'
-# typo
-alias dc='cd'
-# typora
-alias typora='open -a Typora'
 # set gnu commands as default
 alias sed='gsed'
 
