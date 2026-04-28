@@ -15,11 +15,14 @@ return {
           "toml", "json", "yaml",
           "bash", "html", "css", "sql",
           "diff", "dockerfile", "terraform", "proto",
-          "c_sharp", "haskell", "commonlisp",
+          "c_sharp", "haskell", "commonlisp", "fsharp",
           "markdown", "markdown_inline",
         },
-        highlight = { enable = true },
-        indent = { enable = true },
+      })
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
       })
     end,
   },
