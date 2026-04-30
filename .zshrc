@@ -223,7 +223,10 @@ function _update_terminal_title() {
   echo -ne "\033]0;${PWD##*/}\007"
 }
 
-function chpwd() { ls -a; _update_terminal_title }
+function chpwd() {
+  ls -a
+  (( $+functions[_update_terminal_title] )) && _update_terminal_title
+}
 
 # 新しいタブ/ウィンドウ表示時にも即反映
 add-zsh-hook precmd _update_terminal_title
