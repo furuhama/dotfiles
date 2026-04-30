@@ -144,13 +144,19 @@ autoload colors && colors
 # Add hook for calling vcs_info before each command.
 add-zsh-hook precmd vcs_info
 
++vi-git_status() {
+  if git ls-files --others --exclude-standard 2>/dev/null | grep -q .; then
+    hook_com[misc]+='%F{red}?%f'
+  fi
+}
+
 # Set vcs_info parameters.
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '%F{green}S%f'
 zstyle ':vcs_info:*' unstagedstr '%F{yellow}U%f'
-zstyle ':vcs_info:*' formats ' - [%b%c%u]'
-zstyle ':vcs_info:*' actionformats " - [%b%c%u|%F{cyan}%a%f]"
+zstyle ':vcs_info:*' formats ' - [%b%c%u%m]'
+zstyle ':vcs_info:*' actionformats " - [%b%c%u%m|%F{cyan}%a%f]"
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b|%F{cyan}%r%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git_status
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'ex=32'
