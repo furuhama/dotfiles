@@ -97,7 +97,6 @@ return {
   -- ==========================
   -- color scheme
   -- ==========================
-  { "arcticicestudio/nord-vim",     lazy = true },
   {
     "morhetz/gruvbox",
     lazy = false,
@@ -236,25 +235,5 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
-  },
-
-  -- ==========================
-  -- language-specific (lazy)
-  -- ==========================
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    config = function()
-      vim.g.rustfmt_autosave = 1
-      vim.g.rustfmt_options = "override"
-    end,
-  },
-  {
-    "tpope/vim-rails",
-    ft = "ruby",
-  },
-  {
-    "rhysd/reply.vim",
-    cmd = { "Repl", "ReplAuto" },
   },
 }
