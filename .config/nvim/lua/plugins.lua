@@ -31,37 +31,22 @@ return {
   -- file tree
   -- ==========================
   {
-    "lambdalisue/fern.vim",
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      vim.cmd([[
-        function! s:fern_preview_init() abort
-          nmap <buffer><expr>
-            \ <Plug>(fern-my-preview-or-nop)
-            \ fern#smart#leaf(
-            \   "\<Plug>(fern-action-open:edit)\<C-w>p",
-            \   "",
-            \ )
-          nmap <buffer><expr> J
-            \ fern#smart#drawer(
-            \   "j\<Plug>(fern-my-preview-or-nop)",
-            \   "j",
-            \ )
-          nmap <buffer><expr> K
-            \ fern#smart#drawer(
-            \   "k\<Plug>(fern-my-preview-or-nop)",
-            \   "k",
-            \ )
-          nmap <buffer><expr> <C-j> "j"
-          nmap <buffer><expr> <C-k> "k"
-        endfunction
-
-        augroup my-fern-preview
-          autocmd! *
-          autocmd FileType fern call s:fern_preview_init()
-        augroup END
-      ]])
-      vim.g["fern#default_hidden"] = 1
-      vim.keymap.set("n", "<C-x>", ":Fern . -drawer -reveal=%<CR>", { silent = true })
+      require("nvim-tree").setup({
+        filters = {
+          dotfiles = false,
+        },
+        on_attach = function(bufnr)
+          local api = require("nvim-tree.api")
+          api.config.mappings.default_on_attach(bufnr)
+          local opts = { buffer = bufnr, silent = true, nowait = true }
+          vim.keymap.set("n", "l", api.node.open.edit,           opts)
+          vim.keymap.set("n", "h", api.node.navigate.parent_close, opts)
+        end,
+      })
+      vim.keymap.set("n", "<C-x>", ":NvimTreeFindFileToggle<CR>", { silent = true })
     end,
   },
 
@@ -107,29 +92,7 @@ return {
   -- ==========================
   -- git
   -- ==========================
-  { "vim-denops/denops.vim" },
-  { "lambdalisue/askpass.vim" },
-  { "lambdalisue/guise.vim" },
-  {
-    "lambdalisue/gin.vim",
-    dependencies = {
-      "vim-denops/denops.vim",
-      "lambdalisue/askpass.vim",
-      "lambdalisue/guise.vim",
-    },
-    config = function()
-      vim.api.nvim_create_user_command("Blame", function()
-        vim.cmd("GinBlame " .. vim.fn.fnameescape(vim.fn.expand("%")))
-      end, {})
-      vim.api.nvim_create_user_command("OpenPR", function()
-        local line = vim.fn.getline(".")
-        local hash = vim.fn.matchstr(line, [[^\^\?[0-9a-f]\{7,\}]])
-        if hash == "" then return end
-        vim.fn.system(string.format("git openpr %s", hash))
-      end, {})
-    end,
-  },
-  { "furuhama/vim-tig-viewer" },
+  { "tpope/vim-fugitive" },
 
   -- ==========================
   -- color scheme

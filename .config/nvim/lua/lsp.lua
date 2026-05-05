@@ -39,6 +39,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "ts_ls",
+    "denols",
     "ruby_lsp",
     "pyright",
     "rust_analyzer",
@@ -52,6 +53,19 @@ require("mason-lspconfig").setup({
     function(server_name)
       require("lspconfig")[server_name].setup({
         capabilities = capabilities,
+      })
+    end,
+    ["ts_ls"] = function()
+      require("lspconfig").ts_ls.setup({
+        capabilities = capabilities,
+        root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
+        single_file_support = false,
+      })
+    end,
+    ["denols"] = function()
+      require("lspconfig").denols.setup({
+        capabilities = capabilities,
+        root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
       })
     end,
   },
