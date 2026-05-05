@@ -58,6 +58,25 @@ vim.keymap.set({ "n", "x", "o" }, "<C-a>", "^")
 vim.keymap.set({ "n", "x", "o" }, "<C-e>", "$")
 
 -- ======================
+-- trailing whitespace highlight (skip floating windows)
+-- ======================
+local function set_trailing_ws_hl()
+  vim.api.nvim_set_hl(0, "TrailingWhitespace", { bg = "#F4503E" })
+end
+set_trailing_ws_hl()
+vim.api.nvim_create_autocmd("ColorScheme", { callback = set_trailing_ws_hl })
+
+vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
+  callback = function()
+    local win = vim.api.nvim_get_current_win()
+    if vim.api.nvim_win_get_config(win).relative ~= "" then return end
+    local prev = vim.w[win].trailing_ws_id
+    if prev then pcall(vim.fn.matchdelete, prev) end
+    vim.w[win].trailing_ws_id = vim.fn.matchadd("TrailingWhitespace", [[\s\+$]])
+  end,
+})
+
+-- ======================
 -- commands
 -- ======================
 if vim.fn.exists(":DiffOrig") == 0 then

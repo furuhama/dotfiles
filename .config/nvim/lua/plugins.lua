@@ -87,7 +87,6 @@ return {
       require("Comment").setup()
     end,
   },
-  { "bronson/vim-trailing-whitespace" },
 
   -- ==========================
   -- git
