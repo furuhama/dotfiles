@@ -5,19 +5,20 @@ return {
   -- ==========================
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     build = ":TSUpdate",
-    event = "BufReadPost",
+    -- not lazy: the FileType autocmd below must exist before the first buffer is read
+    lazy = false,
     config = function()
-      require("nvim-treesitter.config").setup({
-        ensure_installed = {
-          "lua", "vim", "vimdoc",
-          "rust", "ruby", "go", "kotlin", "javascript", "typescript",
-          "toml", "json", "yaml",
-          "bash", "html", "css", "sql",
-          "diff", "dockerfile", "terraform", "proto",
-          "c_sharp", "haskell", "commonlisp", "fsharp",
-          "markdown", "markdown_inline",
-        },
+      -- main branch API: install() is async and skips already-installed parsers
+      require("nvim-treesitter").install({
+        "lua", "vim", "vimdoc",
+        "rust", "ruby", "go", "kotlin", "javascript", "typescript",
+        "toml", "json", "yaml",
+        "bash", "html", "css", "sql",
+        "diff", "dockerfile", "terraform", "proto",
+        "c_sharp", "haskell", "commonlisp", "fsharp",
+        "markdown", "markdown_inline",
       })
       vim.api.nvim_create_autocmd("FileType", {
         callback = function(args)
