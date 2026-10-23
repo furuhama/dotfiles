@@ -39,3 +39,5 @@ git-worktrees
 .envrc
 
 .mypy_cache
+
+**/.claude/settings.local.json
